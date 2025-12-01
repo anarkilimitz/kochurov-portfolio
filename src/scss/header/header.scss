@@ -1,0 +1,107 @@
+@import "../variables/variables";
+
+.header {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 403px;
+
+    &__hero-img {
+        position: absolute;
+        width: 575px;
+        height: 638.5px;
+        top: 0;
+        left: 278px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+
+        img {
+            width: 575px;
+            height: 638.5px;
+            object-fit: cover;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        width: 515px;
+        height: 80px;
+        right: 0;
+        top: 0;
+        margin: 36px 161px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .nav-link {
+        display: inline-block;
+        color: $text-main;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: normal;
+        list-style-type: none;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: $text-hover;
+        }
+
+        &:focus {
+            color: $text-hover;
+        }
+
+        &:focus-visible {
+            color: $text-hover;
+            outline: 2px solid $text-hover;
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        &.active {
+            color: $text-hover;
+            background-color: $text-main;
+            font-size: 16px;
+            padding: 0px 14px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: inline-block;
+        margin: 385px 0 0 874px;
+        padding: 0;
+        width: 562px;
+        height: 400px;
+
+        h1,
+        h2 {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-size: 96px;
+            font-weight: 700;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            line-height: 0.8;
+        }
+
+
+        span {
+            transition: all 0.4s ease;
+
+            &:hover {
+                color: $text-hover;
+                cursor: default;
+            }
+        }
+    }
+}
