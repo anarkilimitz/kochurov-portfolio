@@ -6,6 +6,24 @@
 
 @import "footer/footer.scss";
 
+html {
+    scroll-behavior: smooth; // для скроллера
+}
+
+// для скроллера
+.scroller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    will-change: transform;
+}
+
+body {
+    overflow-x: hidden; // для скроллера - убирает горизонт скролл
+}
+
 .container {
     max-width: 1920px;
     width: 100%;
