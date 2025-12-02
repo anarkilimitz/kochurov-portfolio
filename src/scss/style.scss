@@ -1,9 +1,23 @@
 @import "modern-normalize/modern-normalize.css";
 
 @import "header/header.scss";
+@import "about/about.scss";
+@import "cv/cv.scss";
+
+@import "footer/footer.scss";
 
 .container {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
+}
+
+::selection {
+    background-color: $bg-selection;
+    color: $text-selection;
+}
+
+::-moz-selection {
+    background-color: $bg-selection;
+    color: $text-selection;
 }

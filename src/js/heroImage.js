@@ -1,4 +1,4 @@
-export function initHeroImageReveal() {
+export function initHeroImage() {
 	const h1 = document.querySelector('.header__title h1');
 	const heroImg = document.querySelector('.header__hero-img');
 
@@ -10,7 +10,7 @@ export function initHeroImageReveal() {
 	});
 
 	h1.addEventListener('mouseleave', () => {
-		heroImg.style.opacity = '0';
-		heroImg.style.visibility = 'hidden';
+		heroImg.style.opacity = '0.2';
+		// heroImg.style.visibility = 'hidden';
 	});
 }
