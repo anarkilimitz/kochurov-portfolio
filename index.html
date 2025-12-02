@@ -35,12 +35,12 @@
       </div>
     </section>
     <!-- Обо мне -->
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about__content">
           <h3 class="about__title">ABOUT</h3>
           <div class="about__text">
-            <p>As a Lead Product Designer with 13+ years of experience, I specialise in crafting scalable design
+            <p>As a <span>Lead Product Designer</span> with 13+ years of experience, I specialise in crafting scalable design
               systems,
               driving UX/UI
               innovation, and leading high-performing teams. I thrive at the intersection of strategy and execution,
@@ -72,15 +72,26 @@
       </div>
     </section>
     <!-- Резюме -->
-    <section class="cv">
+    <section class="cv" id="cases">
       <div class="container">
         <div class="cv__content">
           <h3 class="cv__title">CV</h3>
           <h4 class="cv__title-second">CASES</h4>
-          <div class="cv__slider-wrapper">
-            <div class="cv__slider"></div>
+          <!-- Карусель -->
+          <div class="carousel-container">
+            <div class="carousel-wrapper">
+              <!-- Основные -->
+              <img src="/src/img/carousel/phone1.png" alt="Blue-phone">
+              <img src="/src/img/carousel/phone2.png" alt="Green-phone">
+              <img src="/src/img/carousel/phone3.png" alt="Black-phone">
+              <!-- Дублированные -->
+              <img src="/src/img/carousel/phone1.png" alt="Blue-phone">
+              <img src="/src/img/carousel/phone2.png" alt="Green-phone">
+              <img src="/src/img/carousel/phone3.png" alt="Black-phone">
+            </div>
           </div>
-          <div class="cv__social-wrapper">
+          <!-- Социальные сети -->
+          <div class="cv__social-wrapper" id="socials">
             <h4 class="cv__title-min">SOCIALS</h4>
             <ul class="cv__social">
               <li>

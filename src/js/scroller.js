@@ -41,6 +41,29 @@ export function initSmoothScroll() {
 		scroller.style.transform = `translateY(${-current}px)`;
 	}
 
+	// чтобы работали якоря, но плавности нет!
+	// document.querySelectorAll('a[href^="#"]').forEach((link) => {
+	// 	link.addEventListener('click', (e) => {
+	// 		e.preventDefault();
+
+	// 		const id = link.getAttribute('href').substring(1);
+	// 		const section = document.getElementById(id);
+	// 		if (!section) return;
+
+	// 		const offsetTop = section.offsetTop;
+
+	// 		target = offsetTop;
+	// 		current = offsetTop;
+
+	// 		scroller.style.transform = `translateY(${-current}px)`;
+
+	// 		window.scrollTo({
+	// 			top: offsetTop,
+	// 			behavior: 'instant' || 'auto',
+	// 		});
+	// 	});
+	// });
+
 	window.addEventListener('scroll', handleScroll, { passive: true });
 	window.addEventListener('resize', handleResize);
 

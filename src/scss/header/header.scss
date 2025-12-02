@@ -92,6 +92,11 @@
             line-height: 0.8;
         }
 
+        h2 {
+            // это чтобы не мешало hover тексту выше и не резало низ текста!!!
+            overflow: hidden;
+            padding-bottom: 1px;
+        }
 
         span {
             transition: all 0.4s ease;
