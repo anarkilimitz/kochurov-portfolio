@@ -1,10 +1,12 @@
-@import "modern-normalize/modern-normalize.css";
+@use "modern-normalize/modern-normalize.css";
+@use "variables/variables.scss" as *;
 
-@import "header/header.scss";
-@import "about/about.scss";
-@import "cv/cv.scss";
 
-@import "footer/footer.scss";
+@use "header/header.scss";
+@use "about/about.scss";
+@use "cv/cv.scss";
+
+@use "footer/footer.scss";
 
 html {
     scroll-behavior: smooth; // для скроллера
