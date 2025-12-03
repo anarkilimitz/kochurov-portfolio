@@ -6,36 +6,38 @@
 @use "about/about.scss";
 @use "cv/cv.scss";
 @use "carousel/carousel.scss";
+@use "case/case.scss";
 
 @use "footer/footer.scss";
 
 html {
-    scroll-behavior: smooth; // для скроллера
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    scroll-behavior: smooth;
+    // overflow: auto;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
 }
 
 // для скроллера
-.scroller {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    will-change: transform;
-}
+// .scroller {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     z-index: 1;
+//     will-change: transform;
+// }
 
 body {
-    overflow-x: hidden; // для скроллера - убирает горизонт скролл
-    overflow: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    // для скроллера - убирает горизонт скролл
+    // overflow-x: hidden; 
+    // overflow: auto;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
+// body::-webkit-scrollbar {
+//     display: none;
+// }
 
 .container {
     max-width: 1920px;

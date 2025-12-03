@@ -5,5 +5,5 @@ import { initSmoothScroll } from './scroller.js';
 document.addEventListener('DOMContentLoaded', () => {
 	initMenu();
 	initHeroImage();
-	initSmoothScroll();
+	// initSmoothScroll();
 });
