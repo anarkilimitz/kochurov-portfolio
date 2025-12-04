@@ -8,8 +8,8 @@
 @import "cv/cv.scss";
 @import "carousel/carousel.scss";
 @import "case/case.scss";
-
 @import "footer/footer.scss";
+@import "pageup/pageup.scss";
 
 * {
     font-family: inherit;
@@ -35,13 +35,13 @@ html {
 //     will-change: transform;
 // }
 
-body {
+// body {
     // для скроллера - убирает горизонт скролл
     // overflow-x: hidden; 
     // overflow: auto;
     // -ms-overflow-style: none;
     // scrollbar-width: none;
-}
+// }
 
 // body::-webkit-scrollbar {
 //     display: none;

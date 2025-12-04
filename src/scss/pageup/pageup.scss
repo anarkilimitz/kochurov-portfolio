@@ -1,0 +1,42 @@
+.pageup {
+    position: fixed;
+    right: 40px;
+    bottom: 180px;
+    width: 56px;
+    height: 56px;
+    background: $pageup-main;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 100;
+    cursor: pointer;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    svg path {
+        fill: #ffffff;
+    }
+
+    &:hover {
+        background: $pageup-hover;
+        transform: translateY(-6px) scale(1.05);
+    }
+
+    &.show:hover {
+        transform: translateY(-6px) scale(1.05);
+    }
+}
