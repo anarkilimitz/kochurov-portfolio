@@ -1,14 +1,22 @@
-@use "modern-normalize/modern-normalize.css";
-@use "variables/variables.scss" as *;
+@import "../libs/fonts.css";
+@import "modern-normalize/modern-normalize.css";
 
+@import "variables/variables.scss";
 
-@use "header/header.scss";
-@use "about/about.scss";
-@use "cv/cv.scss";
-@use "carousel/carousel.scss";
-@use "case/case.scss";
+@import "header/header.scss";
+@import "about/about.scss";
+@import "cv/cv.scss";
+@import "carousel/carousel.scss";
+@import "case/case.scss";
 
-@use "footer/footer.scss";
+@import "footer/footer.scss";
+
+* {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
 
 html {
     scroll-behavior: smooth;
