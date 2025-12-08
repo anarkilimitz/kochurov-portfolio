@@ -97,6 +97,10 @@
 
     &__text {
         @include text;
+
+        p:first-child {
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -130,6 +134,52 @@
 
     &__text {
         @include text;
+
+        p:first-child {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// Блок SCOPE
+.scope {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+
+        p:nth-child(-n+2) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// Блок OWNERSHIP
+.ownership {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+
+        p:nth-child(-n+2) {
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -147,6 +197,10 @@
 
     &__text {
         @include text;
+
+        p:first-child {
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -164,6 +218,82 @@
 
     &__text {
         @include text;
+
+        p:nth-child(-n+4) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// Блок RESEARCH
+.research {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+    }
+}
+
+// Блок EVALUATED
+.evaluated {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+    }
+}
+
+// Блок PROBLEMATIC
+.problematic {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+    }
+}
+
+// Блок INSIGHTS
+.insights {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+
+        p:nth-child(-n+5) {
+            margin-bottom: 30px;
+        }
     }
 }
 
