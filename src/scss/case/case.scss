@@ -1,4 +1,4 @@
-// @use "../variables/variables" as*;
+@import "/src/scss/base/mixins.scss";
 
 // Блок DEFINE
 .case {
@@ -82,186 +82,114 @@
     }
 }
 
-// Блок BEGINNING
-.beginning {
-    margin-top: 138px;
+// Блок STARTING
+.starting {
 
     &__content {
-        margin-left: 80px;
-        display: grid;
-        grid-template-columns: 115px 1fr;
-        gap: 85px;
-        max-width: 1172px;
+        margin: 138px 0 55px 0;
+        @include grid-content;
     }
 
     &__title {
-        margin: 0;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-style: normal;
+        @include title;
     }
 
     &__text {
-        font-size: 24px;
-        font-weight: 400;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    img {
-        display: block;
-        margin: 114px auto 137px;
-        max-width: 1170px;
-        max-height: 658px;
-        object-fit: cover;
-        object-position: center;
+        @include text;
     }
 }
 
 // Блок ROLE
-.beginning {
-
-    &__content-role {
-        margin-left: 80px;
-        display: grid;
-        grid-template-columns: 55px 1fr;
-        gap: 144px;
-        max-width: 1172px;
+.role {
+    &__content {
+        margin-top: 138px;
+        @include grid-content;
     }
 
-    &__title-role {
-        margin: 0;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-style: normal;
+    &__title {
+        @include title;
     }
 
-    &__text-role {
-        font-size: 24px;
-        font-weight: 400;
+    &__text {
+        @include text;
+    }
+}
 
-        p {
-            margin: 0;
-        }
+// Блок TEAM
+.team {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
     }
 }
 
 // Блок PROBLEM
-.beginning {
+.problem {
 
-    &__content-problem {
-        margin-top: 137px;
-        margin-left: 80px;
-        display: grid;
-        grid-template-columns: 55px 1fr;
-        gap: 144px;
-        max-width: 1172px;
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
     }
 
-    &__title-problem {
-        margin: 0;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-style: normal;
+    &__title {
+        @include title;
     }
 
-    &__text-problem {
-        font-size: 24px;
-        font-weight: 400;
-
-        p {
-            margin: 0;
-        }
-    }
-}
-
-// Карусель
-
-.carousel-container-case {
-    margin: 112px 0 136px 80px;
-    padding: 0;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-}
-
-.carousel-wrapper-case {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    animation: scroll 60s linear infinite;
-}
-
-.carousel-wrapper-case img {
-    width: 575px;
-    height: 320px;
-    margin: 0 20px;
-    display: inline-block;
-    vertical-align: middle;
-    border-radius: 24px;
-    max-inline-size: none;
-    object-fit: cover;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-wrapper-case img {
-        width: 457px;
-        height: 266px;
-        margin: 0 5px;
-    }
-
-    .carousel-wrapper {
-        animation-duration: 60s;
+    &__text {
+        @include text;
     }
 }
 
 // Блок CHALLENGES
-.beginning {
+.challenges {
 
-    &__content-challenges {
-        margin-left: 80px;
-        display: grid;
-        grid-template-columns: 143px 1fr;
-        gap: 56px;
-        max-width: 1172px;
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
     }
 
-    &__title-challenges {
-        margin: 0;
-        text-align: left;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-style: normal;
+    &__title {
+        @include title;
     }
 
-    &__text-challenges {
-        font-size: 24px;
-        font-weight: 400;
+    &__text {
+        @include text;
+    }
+}
 
-        p {
-            margin: 0;
-        }
+// для всех картинок-BG на странице
+.img-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    max-height: 658px;
+    overflow: hidden;
+
+    img {
+        @include img-bg;
+    }
+}
+
+// галерея картинок
+.img-wrapper {
+    margin-left: 280px;
+    width: 1390px;
+    height: 250px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 13px;
+
+    img {
+        @include img-bg;
     }
 }
