@@ -1,15 +1,15 @@
+@use "base/variables.scss" as *;
+
+@use "header/header.scss";
+@use "about/about.scss";
+@use "cv/cv.scss";
+@use "carousel/carousel.scss";
+@use "case/case.scss";
+@use "footer/footer.scss";
+@use "pageup/pageup.scss";
+
 @import "../libs/fonts.css";
 @import "modern-normalize/modern-normalize.css";
-
-@import "base/variables.scss";
-
-@import "header/header.scss";
-@import "about/about.scss";
-@import "cv/cv.scss";
-@import "carousel/carousel.scss";
-@import "case/case.scss";
-@import "footer/footer.scss";
-@import "pageup/pageup.scss";
 
 * {
     font-family: inherit;

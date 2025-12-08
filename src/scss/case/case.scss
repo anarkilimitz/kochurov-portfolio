@@ -1,4 +1,5 @@
-@import "/src/scss/base/mixins.scss";
+@use "../base/variables.scss" as *;
+@use "../base/mixins.scss" as *;
 
 // Блок DEFINE
 .case {
