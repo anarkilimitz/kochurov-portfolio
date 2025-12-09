@@ -1,0 +1,25 @@
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: transform 0.01s ease;
+
+    &::after {
+        content: '';
+        width: 4px;
+        height: 4px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
