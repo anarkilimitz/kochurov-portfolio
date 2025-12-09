@@ -1,0 +1,69 @@
+@use "../base/variables.scss" as *;
+
+.wrapper-preview {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+}
+
+.hover-trigger {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: $text-hover;
+    font-weight: 700;
+    vertical-align: baseline;
+}
+
+.preview-card {
+    position: absolute;
+    top: -140px;
+    left: 50px;
+    width: 652px;
+    height: 137px;
+    padding: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: #DEDEDE;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+    border-radius: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 999;
+}
+
+.hover-trigger:hover .preview-card {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.preview-card img {
+    width: 173px;
+    height: 116px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.preview-info h4 {
+    margin: 28px 0 4px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.preview-info p {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+// сбрасывает все унаследованные стили
+.ownership__content .hover-trigger a {
+    all: unset;
+}
