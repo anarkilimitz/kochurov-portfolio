@@ -1,25 +1,47 @@
+@use "../base/variables.scss" as *;
+
 .custom-cursor {
     width: 20px;
     height: 20px;
-    background: #000;
     border-radius: 50%;
+    border: 2px solid black;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    left: 0;
-    top: 0;
+    left: -5px;
+    top: -5px;
     transform: translate(-50%, -50%);
-    transition: transform 0.01s ease;
+    background: #000;
+    transition:
+        background 0.2s ease,
+        border 0.2s ease,
+        transform 0.02s ease;
+}
 
-    &::after {
-        content: '';
-        width: 4px;
-        height: 4px;
-        background: white;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+.dark-bg .custom-cursor,
+.custom-cursor.hover-dark {
+    background: black !important;
+    border-color: black !important;
+}
+
+.dark-bg .custom-cursor::after,
+.custom-cursor.hover-dark::after {
+    background: white !important;
+}
+
+.custom-cursor.hover-link {
+    border: 2px solid $text-hover;
+    background: white !important;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.custom-cursor.hover-link::after {
+    background: $text-hover;
+    border-color: $text-hover;
+}
+
+.custom-cursor.active-link {
+    background: $text-hover !important;
+    border-color: $text-hover !important;
+    transform: translate(-50%, -50%) scale(1.2);
 }
