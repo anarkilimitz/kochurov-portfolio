@@ -1,3 +1,5 @@
+import { lenis } from './scroll.js';
+
 export function initPageUp() {
 	const btn = document.querySelector('.pageup');
 
@@ -11,9 +13,9 @@ export function initPageUp() {
 
 	btn.addEventListener('click', (e) => {
 		e.preventDefault();
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth',  // плавный скролл
-		});
+
+		if (lenis) {
+			lenis.scrollTo(0, { duration: 1.4 });
+		}
 	});
 }

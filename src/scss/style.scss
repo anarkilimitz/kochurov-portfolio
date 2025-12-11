@@ -1,5 +1,6 @@
 @use "base/variables.scss" as *;
 
+@use "../scss/ui/scrollSmooth.scss";
 @use "ui/cursor.scss";
 
 @use "header/header.scss";
@@ -22,7 +23,12 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
 }
 
 .container {

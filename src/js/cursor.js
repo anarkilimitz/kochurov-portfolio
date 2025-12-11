@@ -8,7 +8,8 @@ export function initCustomCursor() {
 	document.body.appendChild(cursor);
 
 	const moveCursor = (e) => {
-		cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+		cursor.style.left = `${e.clientX}px`;
+		cursor.style.top = `${e.clientY}px`;
 	};
 
 	document.addEventListener('mousemove', moveCursor);
@@ -50,6 +51,4 @@ export function initCustomCursor() {
 			cursor.classList.remove('active-link');
 		});
 	});
-	cursor.style.opacity = '0';
-	requestAnimationFrame(() => (cursor.style.opacity = '1'));
 }
