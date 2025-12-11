@@ -4,7 +4,8 @@
     position: relative;
     margin: 0 auto;
     width: 100%;
-    min-height: 403px;
+    min-height: 785px;
+    overflow: hidden;
 
     &__hero-img {
         position: absolute;
@@ -71,12 +72,14 @@
     }
 
     &__title {
-        position: relative;
+        position: fixed;
         display: inline-block;
         margin: 385px 0 0 874px;
         padding: 0;
         width: 562px;
         height: 400px;
+        z-index: 999;
+        transition: all 0.9s cubic-bezier(0.77, 0, .175, 1.5);
 
         h1,
         h2 {
@@ -105,6 +108,11 @@
                 color: $text-hover;
                 cursor: default;
             }
+        }
+
+        &.is-hidden {
+            top: 0;
+            transform: translateY(-200%);
         }
     }
 }
