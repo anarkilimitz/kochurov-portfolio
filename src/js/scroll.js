@@ -4,7 +4,7 @@ export let lenis = null;
 
 export function initSmoothScroll() {
 	if (typeof Lenis === 'undefined') {
-		console.warn('Lenis не загружен. Проверьте подключение скрипта.');
+		console.warn('не загружен');
 		return;
 	}
 
@@ -48,8 +48,13 @@ export function initSmoothScroll() {
 			this.classList.add('active');
 		});
 	});
-
-	lenis.on('scroll', (e) => {});
+// это параллакс у секции
+	lenis.on('scroll', ({ scroll }) => {
+		const element = document.querySelector('.about__text');
+		if (element) {
+			element.style.transform = `translateY(-${scroll * 0.2}px)`;
+		}
+	});
 
 	return lenis;
 }

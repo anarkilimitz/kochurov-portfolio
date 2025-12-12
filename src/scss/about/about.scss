@@ -24,6 +24,7 @@
     &__text {
         font-size: 24px;
         font-weight: 400;
+        will-change: transform;
 
         p {
             margin: 0 0 24px 0;
