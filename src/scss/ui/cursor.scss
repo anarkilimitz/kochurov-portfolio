@@ -11,36 +11,36 @@
     top: -5px;
     transform: translate(-50%, -50%);
     background: #000;
-    opacity: 0.8;
+    // opacity: 0.8;
     transition:
         background 0.5s ease,
         transform 0.3s ease;
-        opacity: 0.2s ease;
+        // opacity: 0.2s ease;
 }
 
 .dark-bg .custom-cursor,
 .custom-cursor.hover-dark {
     background: black !important;
-    opacity: 0.8;
+    // opacity: 0.8;
 }
 
 .dark-bg .custom-cursor::after,
 .custom-cursor.hover-dark::after {
     background: white !important;
-    opacity: 0.8;
+    // opacity: 0.8;
 }
 
 .custom-cursor.hover-link {
-    background: white !important;
+    background: $text-hover !important;
     transform: translate(-50%, -50%) scale(1.8);
 }
 
 .custom-cursor.hover-link::after {
-    background: $text-hover;
-    border-color: $text-hover;
+    background: $mouse-hover;
+    border-color: $mouse-hover;
 }
 
 .custom-cursor.active-link {
-    background: $text-hover !important;
+    background: $mouse-link !important;
     transform: translate(-50%, -50%) scale(1);
 }
