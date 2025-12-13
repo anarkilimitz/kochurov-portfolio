@@ -177,7 +177,7 @@
     &__text {
         @include text;
 
-        p:nth-child(-n+2) {
+        p:nth-child(-n+3) {
             margin-bottom: 30px;
         }
     }
@@ -296,12 +296,32 @@
         }
     }
 }
+// Блок RESULTS
+.results {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+
+        p:nth-child(-n+1) {
+            margin-bottom: 30px;
+        }
+    }
+}
 
 // для всех картинок-BG на странице
 .img-container {
-    margin: 0 auto;
-    max-width: 1170px;
-    max-height: 658px;
+    margin: 75px 0 0 280px;
+    max-width: 1190px;
+    border-radius: 20px;
     overflow: hidden;
 
     img {
@@ -318,9 +338,17 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 13px;
+    gap: 18px;
+
+    .img-card {
+        width: 385px;
+        height: 215px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
 
     img {
         @include img-bg;
+        border-radius: 24px;
     }
 }

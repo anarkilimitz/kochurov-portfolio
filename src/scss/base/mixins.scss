@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 143px 1fr;
     gap: 57px;
-    max-width: 973px;
+    max-width: 1252px;
 }
 
 @mixin title {
@@ -16,7 +16,7 @@
 }
 
 @mixin text {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
 
     p {
@@ -30,4 +30,5 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    border-radius: 20px;
 }
