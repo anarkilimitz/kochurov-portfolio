@@ -39,8 +39,29 @@
         }
     }
 }
+
 // для анимации GSAP
 .about__text .word {
     display: inline;
     color: #000;
+}
+
+@media (max-width: 431px) {
+    .about {
+        margin: 0 20px;
+
+        &__content {
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 80px;
+            max-width: 100%;
+            max-height: none;
+        }
+
+        &__title {
+            padding: 0 0 80px 0;
+            text-align: left;
+        }
+    }
 }

@@ -120,3 +120,19 @@
         animation-duration: 60s;
     }
 }
+
+@media (max-width: 431px) {
+    .carousel-container {
+        margin: 32px 0 71px 0;
+    }
+
+    .carousel-wrapper img {
+        width: 255px;
+        height: 320px;
+        margin: 0 5px;
+    }
+
+    .carousel-wrapper {
+        animation-duration: 60s;
+    }
+}

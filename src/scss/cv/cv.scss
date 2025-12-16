@@ -5,8 +5,7 @@
     padding: 0;
 
     &__title {
-        text-align: center;
-        margin: 0;
+        margin-left: 798px;
         font-weight: 700;
         font-size: 48px;
         text-transform: uppercase;
@@ -80,6 +79,34 @@
             &.active {
                 color: $text-main;
                 background-color: $text-main;
+            }
+        }
+    }
+}
+
+@media (max-width: 431px) {
+    .cv {
+        margin: 0 20px;
+
+        &__title {
+            margin: 0;
+        }
+
+        &__title-second {
+            margin-top: 85px;
+            margin-bottom: 0;
+        }
+
+        &__social-wrapper {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 100%;
+            max-height: none;
+        }
+
+        &__social {
+            &-link {
+                font-size: 15vw;
             }
         }
     }
