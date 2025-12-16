@@ -32,3 +32,16 @@
     object-position: center;
     border-radius: 20px;
 }
+
+// мобилки от 430
+@mixin grid-content-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 35px;
+    max-width: 100%;
+    margin: 60px 20px 40px;
+}
+
+@mixin img-bg-mobile {
+    border-radius: 16px;
+}

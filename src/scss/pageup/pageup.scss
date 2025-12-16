@@ -42,3 +42,10 @@
         transform: translateY(-6px) scale(1.05);
     }
 }
+
+@media (max-width: 431px) {
+    .pageup {
+        right: 30px;
+        bottom: 30px;
+    }
+}

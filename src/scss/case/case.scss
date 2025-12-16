@@ -296,6 +296,7 @@
         }
     }
 }
+
 // Блок RESULTS
 .results {
 
@@ -350,5 +351,112 @@
     img {
         @include img-bg;
         border-radius: 24px;
+    }
+}
+
+@media (max-width: 431px) {
+    .case {
+        &__header {
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+
+            &-menu {
+                position: relative;
+                width: 100%;
+                left: 287px;
+                height: auto;
+                margin: 35px 0 0 0;
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 20px;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            .nav-link {
+                font-size: 20px;
+                font-weight: 700;
+                padding: 8px 0;
+                width: 100%;
+            }
+
+            &-title {
+                position: relative;
+                left: auto;
+                top: auto;
+                width: 100%;
+                height: auto;
+                margin: 280px 0 0 0;
+                padding: 0 15px;
+
+                h2 {
+                    font-size: 12vw;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // Блоки текст с тайтлом
+    .starting,
+    .role,
+    .team,
+    .scope,
+    .ownership,
+    .problem,
+    .challenges,
+    .research,
+    .insights,
+    .results,
+    .evaluated {
+
+        &__content {
+            @include grid-content-mobile;
+        }
+    }
+
+    // для всех картинок-BG на странице
+    .img-container {
+        margin: 0px 20px;
+        width: auto;
+        height: 540px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        img {
+            @include img-bg-mobile;
+        }
+    }
+
+    // галерея картинок
+    .img-wrapper {
+        margin: 20px;
+        width: auto;
+        height: 160px;
+        gap: 6px;
+
+        .img-card {
+            width: 288px;
+            height: 160px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        img {
+            @include img-bg-mobile;
+        }
+    }
+}
+
+@media (max-width: 401px) {
+    .case {
+        &__header {
+            &-menu {
+                left: calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320));
+                // диапазон
+                left: clamp(200px, calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320)), 270px);
+            }
+        }
     }
 }

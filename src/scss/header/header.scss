@@ -192,21 +192,14 @@
 @media (max-width: 401px) {
     .header {
         &__menu {
-            left: 270px;
+            left: calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320));
+            // диапазон
+            left: clamp(200px, calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320)), 270px);
             top: 15px;
         }
 
         &__title {
             top: 53vh;
-        }
-    }
-}
-
-@media (max-width: 320px) {
-    .header {
-        &__menu {
-            left: 200px;
-            top: 15px;
         }
     }
 }
