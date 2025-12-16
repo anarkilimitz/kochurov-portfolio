@@ -188,3 +188,25 @@
         }
     }
 }
+
+@media (max-width: 401px) {
+    .header {
+        &__menu {
+            left: 270px;
+            top: 15px;
+        }
+
+        &__title {
+            top: 53vh;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .header {
+        &__menu {
+            left: 200px;
+            top: 15px;
+        }
+    }
+}
