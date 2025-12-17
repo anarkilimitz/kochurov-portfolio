@@ -132,6 +132,14 @@
     }
 }
 
+@media (min-width: 1921px) and (max-width: 2560px) {
+    .header {
+        &__title {
+            left: calc(874px + (1190 - 874) * (100vw - 1921px) / (2560 - 1921));
+        }
+    }
+}
+
 @media (max-width: 431px) {
     .header {
         min-height: 85vh;
@@ -193,8 +201,6 @@
     .header {
         &__menu {
             left: calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320));
-            // диапазон
-            left: clamp(200px, calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320)), 270px);
             top: 15px;
         }
 
