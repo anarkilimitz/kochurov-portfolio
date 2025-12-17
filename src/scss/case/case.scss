@@ -358,7 +358,9 @@
     .case {
         &__header {
             .menu-visible {
-                display: flex;
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
             }
 
             min-height: auto;
@@ -366,7 +368,7 @@
             flex-direction: column;
 
             &-menu {
-                display: none;
+                display: flex;
                 position: relative;
                 width: 100%;
                 left: 287px;
@@ -377,6 +379,10 @@
                 padding: 0 20px;
                 justify-content: center;
                 align-items: flex-start;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateX(80px);
+                transition: opacity 0.7s ease, transform 0.7s ease, visibility 0.7s ease;
             }
 
             .nav-link {
