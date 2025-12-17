@@ -388,7 +388,7 @@
             .nav-link {
                 font-size: 20px;
                 font-weight: 700;
-                padding: 8px 0;
+                padding: 0;
                 width: 100%;
             }
 
@@ -465,8 +465,6 @@
         &__header {
             &-menu {
                 left: calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320));
-                // диапазон
-                left: clamp(200px, calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320)), 270px);
             }
         }
     }
