@@ -357,11 +357,16 @@
 @media (max-width: 431px) {
     .case {
         &__header {
+            .menu-visible {
+                display: flex;
+            }
+
             min-height: auto;
             display: flex;
             flex-direction: column;
 
             &-menu {
+                display: none;
                 position: relative;
                 width: 100%;
                 left: 287px;

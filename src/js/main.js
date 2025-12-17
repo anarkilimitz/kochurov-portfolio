@@ -5,6 +5,7 @@ import { initHeroImage } from './heroImage.js';
 import { initPageUp } from './pageup.js';
 import { initObserverFixed } from './observerFixed.js';
 import { initTitleEffects } from './titleEffect.js';
+import { initHamburger } from './hamburger.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initSmoothScroll();
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initPageUp();
 	initObserverFixed();
 	initTitleEffects();
+	initHamburger();
 
 	// GSAP только после инициализации lenis
 	gsap.registerPlugin(ScrollTrigger);
