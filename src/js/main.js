@@ -27,25 +27,29 @@ document.addEventListener('DOMContentLoaded', () => {
 	gsap.ticker.lagSmoothing(0); // опционально
 
 	// Анимация слов (без SplitText, так как CDN для него требует платной подписки GSAP Club и не работает публично)
-	document.querySelectorAll('.about__text p').forEach((p) => {
-		// Разбиваем текст на слова с сохранением знаков препинания и пробелов
-		p.innerHTML = p.textContent.replace(
-			/(\S+[\.,!?;:]*)/g,
-			'<span class="word">$1</span>'
-		);
+	document
+		.querySelectorAll(
+			'.about__text p, .starting__text p, .starting,    .role__text p,    .team__text p,    .scope__text p,    .ownership__text p,    .problem__text p,    .challenges__text p,    .research__text p,    .insights__text p,    .results__text p,    .evaluated__text p'
+		)
+		.forEach((p) => {
+			// Разбиваем текст на слова с сохранением знаков препинания и пробелов
+			p.innerHTML = p.textContent.replace(
+				/(\S+[\.,!?;:]*)/g,
+				'<span class="word">$1</span>'
+			);
 
-		gsap.from(p.querySelectorAll('.word'), {
-			opacity: 0,
-			y: 50,
-			
-			stagger: 0.01,
-			duration: 0.8,
-			ease: 'power2.out',
-			scrollTrigger: {
-				trigger: p,
-				start: 'top 80%',
-				toggleActions: 'play none none reverse',
-			},
+			gsap.from(p.querySelectorAll('.word'), {
+				opacity: 0,
+				y: 50,
+
+				stagger: 0.01,
+				duration: 0.8,
+				ease: 'power2.out',
+				scrollTrigger: {
+					trigger: p,
+					start: 'top 80%',
+					toggleActions: 'play none none reverse',
+				},
+			});
 		});
-	});
 });
