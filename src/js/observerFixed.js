@@ -1,25 +1,25 @@
 export function initObserverFixed() {
-        const headerTitle = document.querySelector('.header__title');
-				const casesSection = document.getElementById('cases');
+	const headerSubtitle = document.querySelector('.header__title-subtitle');
+	const casesSection = document.getElementById('cases');
 
-				if (!headerTitle || !casesSection) return;
+	if (!headerSubtitle || !casesSection) return;
 
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (entry.isIntersecting) {
-								headerTitle.classList.add('is-hidden');
-							} else {
-								headerTitle.classList.remove('is-hidden');
-							}
-						});
-					},
-					{
-						root: null,
-						threshold: 0.01, // срабатывает, когда 1% секции #cases видно
-						rootMargin: '500px 0px 0px 0px', // начинаем уезжать чуть раньше
-					}
-				);
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					headerSubtitle.classList.add('is-hidden');
+				} else {
+					headerSubtitle.classList.remove('is-hidden');
+				}
+			});
+		},
+		{
+			root: null,
+			threshold: 0.01,
+			// rootMargin: '1000px 0px 0px 0px',
+		}
+	);
 
-				observer.observe(casesSection);
+	observer.observe(casesSection);
 }
