@@ -1,5 +1,7 @@
 import { initOverlayLoader } from './overlayLoader.js';
+
 import { initSmoothScroll, lenis } from './scroll.js';
+
 import { initCustomCursor } from './cursor.js';
 import { initMenu } from './menu';
 import { initHeroImage } from './heroImage.js';
@@ -10,7 +12,14 @@ import { initHamburger } from './hamburger.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 	await initOverlayLoader();
-	
+
+	// запуск анимации после скрытия overlay !!!
+	document.querySelectorAll('.animated').forEach((el) => {
+		el.style.animation = 'none';
+		el.offsetHeight; // принудительный reflow
+		el.style.animation = '';
+	});
+
 	initSmoothScroll();
 	initCustomCursor();
 	initMenu();

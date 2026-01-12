@@ -1,12 +1,13 @@
 export function initOverlayLoader() {
 	return new Promise((resolve) => {
-
 		const overlay = document.getElementById('overlay-loader');
 		const loader = document.getElementById('loader');
+		// убрать скролл
+		document.body.classList.add('no-scroll');
 
 		const totalSegments = 8;
-		const activeLength = 8;
-		const speed = 200;
+		const activeLength = 1;
+		const speed = 170;
 
 		// сегменты
 		for (let i = 0; i < totalSegments; i++) {
@@ -20,26 +21,33 @@ export function initOverlayLoader() {
 
 		function animate() {
 			segments.forEach((seg, index) => {
-				const isActive = index >= position && index < position + activeLength;
-				seg.classList.toggle('active', isActive);
+				// если сегмент попал в волну — навсегда остается зелёным
+				if (index >= position && index < position + activeLength) {
+					seg.classList.add('active');
+				}
 			});
 
 			position++;
+
+			// когда волна дошла до конца — выход
 			if (position > totalSegments) {
-				position = -activeLength + 1;
+				clearInterval(interval);
+
+				// пауза перед скрытием
+				setTimeout(() => {
+					overlay.classList.add('hidden');
+
+					setTimeout(() => {
+						overlay.remove();
+                        // вернуть скролл
+						document.body.classList.remove('no-scroll');
+
+						resolve();
+					}, 0); // время
+				}, 0); // пауза после заполнения
 			}
 		}
 
 		const interval = setInterval(animate, speed);
-		
-		setTimeout(() => {
-			clearInterval(interval);
-			overlay.classList.add('hidden');
-			
-			setTimeout(() => {
-				overlay.remove(); // полностью убрать из dom
-				resolve();
-			}, 600);
-		}, 3000);
 	});
 }
