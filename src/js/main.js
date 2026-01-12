@@ -1,3 +1,4 @@
+import { initOverlayLoader } from './overlayLoader.js';
 import { initSmoothScroll, lenis } from './scroll.js';
 import { initCustomCursor } from './cursor.js';
 import { initMenu } from './menu';
@@ -7,15 +8,15 @@ import { initObserverFixed } from './observerFixed.js';
 import { initTitleEffects } from './titleEffect.js';
 import { initHamburger } from './hamburger.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+	await initOverlayLoader();
+	
 	initSmoothScroll();
-
 	initCustomCursor();
 	initMenu();
 	initHeroImage();
 	initPageUp();
 	initObserverFixed();
-	initTitleEffects();
 	initHamburger();
 
 	// GSAP только после инициализации lenis
@@ -26,10 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	gsap.ticker.lagSmoothing(0); // опционально
 
+	// Инициализация кастомных заголовочных эффектов
+	initTitleEffects();
+
 	// Анимация слов (без SplitText, так как CDN для него требует платной подписки GSAP Club и не работает публично)
 	document
 		.querySelectorAll(
-			'.about__text p, .starting__text p, .starting,    .role__text p,    .team__text p,    .scope__text p,    .ownership__text p,    .problem__text p,    .challenges__text p,    .research__text p,    .insights__text p,    .results__text p,    .evaluated__text p'
+			'.about__text p, .starting__text p, .starting, .role__text p, .team__text p, .scope__text p, .ownership__text p, .problem__text p, .challenges__text p, .research__text p, .insights__text p, .results__text p, .evaluated__text p'
 		)
 		.forEach((p) => {
 			// Разбиваем текст на слова с сохранением знаков препинания и пробелов
@@ -41,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			gsap.from(p.querySelectorAll('.word'), {
 				opacity: 0,
 				y: 50,
-
 				stagger: 0.01,
 				duration: 0.8,
 				ease: 'power2.out',
@@ -52,4 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				},
 			});
 		});
+
+	// Пересчёт всех триггеров после полной инициализации
+	ScrollTrigger.refresh();
 });

@@ -1,5 +1,7 @@
 @use "base/variables.scss" as *;
 
+@use "ui/overlayLoader.scss";
+
 @use "../scss/ui/scrollSmooth.scss";
 @use "ui/cursor.scss";
 @use "../scss/ui/interactiveImage.scss";
