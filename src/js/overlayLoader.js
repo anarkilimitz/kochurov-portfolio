@@ -1,7 +1,14 @@
 export function initOverlayLoader() {
 	return new Promise((resolve) => {
 		const overlay = document.getElementById('overlay-loader');
-		const loader = document.getElementById('loader');
+        const loader = document.getElementById('loader');
+        
+        // если оверлея нет на странице - сразу продолжить (чтобы все другие эффекты работали, это относится ко второй странице и последующим) !!!
+        if (!overlay || !loader) {
+					resolve();
+					return;
+				}
+
 		// убрать скролл
 		document.body.classList.add('no-scroll');
 
