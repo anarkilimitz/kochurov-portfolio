@@ -161,7 +161,7 @@
     justify-content: space-between;
     align-items: flex-end;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 99;
 
     span {
         display: block;
@@ -184,6 +184,19 @@
         display: flex;
     }
 
+    .header__title-first {
+        margin: 0;
+    }
+
+    .header__title-subtitle {
+        position: static;
+        padding: 0;
+    }
+
+    .header__title-subtitle ul li {
+        font-size: 15vw;
+    }
+
     .header {
         .menu-visible {
             visibility: visible;
@@ -191,7 +204,7 @@
             transform: translateY(0);
         }
 
-        min-height: 85vh;
+        min-height: 100vh;
 
         &__hero-img {
             width: 100%;
