@@ -84,7 +84,19 @@
     }
 }
 
-@media (max-width: 431px) {
+@media (max-width: 1400px) {
+    .cv {
+        &__title {
+            margin-left: clamp(200px, calc(853px - 1.0 * (1400px - 100vw)), 853px);
+        }
+
+        &__social-wrapper {
+            gap: clamp(40px, calc(853px - 1.0 * (1400px - 100vw)), 853px);
+        }
+    }
+}
+
+@media (max-width: 560px) {
     .cv {
         margin: 0 20px;
 
@@ -108,6 +120,16 @@
             &-link {
                 font-size: 15vw;
             }
+        }
+    }
+}
+
+@media (min-width: 1921px) {
+
+    .cv {
+
+        &__title {
+            margin-left: 808px;
         }
     }
 }
