@@ -67,3 +67,57 @@
 .ownership__content .hover-trigger a {
     all: unset;
 }
+
+@media (max-width: 1360px) {
+
+    .preview-card {
+        left: -369px;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .preview-card {
+        left: -620px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .preview-card {
+        left: -374px;
+    }
+}
+
+@media (max-width: 675px) {
+
+    .preview-card {
+        left: calc(50% - 135px);
+        top: calc(-130px + (-60 + 100) * (100vw - 320px) / (675 - 320));
+        width: calc(80vw - 24px);
+        height: 90px;
+        padding: calc(8px + (10 - 8) * (100vw - 320px) / (675 - 320));
+        gap: calc(10px + (12 - 10) * (100vw - 320px) / (675 - 320));
+        border-radius: calc(16px + (18 - 16) * (100vw - 320px) / (675 - 320));
+        transform: translate(-50%, -10px);
+    }
+
+    .hover-trigger:hover .preview-card {
+        transform: translate(-50%, 0);
+    }
+
+    .preview-card img {
+        width: calc(95px + (110 - 95) * (100vw - 320px) / (675 - 320));
+        height: calc(64px + (74 - 64) * (100vw - 320px) / (675 - 320));
+        border-radius: calc(7px + (8 - 7) * (100vw - 320px) / (675 - 320));
+    }
+
+    .preview-info h4 {
+        font-size: calc(16px + (18 - 16) * (100vw - 320px) / (675 - 320));
+        margin: 4px 0 2px;
+    }
+
+    .preview-info p {
+        font-size: calc(13px + (14 - 13) * (100vw - 320px) / (675 - 320));
+    }
+}

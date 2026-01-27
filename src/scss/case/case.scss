@@ -409,21 +409,6 @@
                 padding: 0;
                 width: 100%;
             }
-
-            &-title {
-                position: relative;
-                left: auto;
-                top: auto;
-                width: 100%;
-                height: auto;
-                margin: 280px 0 0 0;
-                padding: 0 15px;
-
-                h2 {
-                    font-size: 12vw;
-                    width: 100%;
-                }
-            }
         }
     }
 
@@ -482,11 +467,27 @@
     .case__header-menu {
         left: 980px;
     }
+
+    .case__header-title {
+        margin-left: calc(200px + (1084 - 200) * (100vw - 320px) / (1630 - 620) - 450px);
+    }
 }
 
 @media (max-width: 1525px) {
     .hamburger {
         display: flex;
+    }
+
+    .img-container {
+        img {
+            padding-right: 20px;
+            ;
+        }
+    }
+
+    .interactive-image-container {
+        margin-right: 0;
+        padding-right: 20px;
     }
 
     .case__header {
@@ -496,7 +497,7 @@
             transform: translateY(0);
         }
 
-        min-height: 100vh;
+        min-height: 80vh;
 
         &-menu {
             width: 100%;
@@ -517,6 +518,81 @@
         .nav-link {
             font-size: 20px;
             font-weight: 700;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1360px) {
+
+    // Блоки текст с тайтлом
+    .starting,
+    .role,
+    .team,
+    .scope,
+    .ownership,
+    .problem,
+    .challenges,
+    .research,
+    .insights,
+    .results,
+    .evaluated {
+
+        &__content {
+            margin-right: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    // Блоки текст с тайтлом
+    .starting,
+    .role,
+    .team,
+    .scope,
+    .ownership,
+    .problem,
+    .challenges,
+    .research,
+    .insights,
+    .results,
+    .evaluated {
+
+        &__content {
+            @include grid-content-mobile;
+        }
+    }
+
+    .img-container {
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    .img-wrapper {
+        margin-left: 0;
+        padding-left: 20px;
+    }
+
+    .interactive-image-container {
+        padding: 0 20px;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 645px) {
+    .case__header-title {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: auto;
+        margin: 280px 0 0 0;
+        padding: 0 15px;
+
+        h2 {
+            font-size: 12vw;
             width: 100%;
         }
     }
