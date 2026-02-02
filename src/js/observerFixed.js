@@ -15,9 +15,9 @@ export function initObserverFixed() {
 			});
 		},
 		{
-			root: null,
-			threshold: 0.01,
-			// rootMargin: '1000px 0px 0px 0px',
+			root: null, // одно и то же root: document.querySelector('body')
+			threshold: 0,
+			rootMargin: '-400px 0px 0px 0px',
 		}
 	);
 

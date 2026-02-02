@@ -18,6 +18,8 @@
 @mixin text {
     font-size: 20px;
     font-weight: 400;
+    line-height: 30px;
+
 
     p {
         margin: 0;

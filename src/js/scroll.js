@@ -52,7 +52,7 @@ export function initSmoothScroll() {
 	lenis.on('scroll', ({ scroll }) => {
 		const element = document.querySelector('.about__text');
 		if (element) {
-			element.style.transform = `translateY(-${scroll * 0.2}px)`;
+			element.style.transform = `translateY(-${scroll * 0.05}px)`;
 		}
 	});
 

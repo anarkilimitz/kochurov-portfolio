@@ -58,7 +58,7 @@
 
         &-title {
             display: inline-block;
-            margin: 290px 0 0 1021px;
+            margin: 470px 0 0 1021px;
             padding: 0;
             width: 620px;
             height: 392px;
@@ -155,8 +155,14 @@
     &__text {
         @include text;
 
-        p:first-child {
-            margin-bottom: 30px;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin-top: 30px;
         }
     }
 }
@@ -176,8 +182,18 @@
     &__text {
         @include text;
 
-        p:nth-child(-n+2) {
-            margin-bottom: 30px;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            &:first-child {
+                margin-bottom: 30px;
+            }
+        }
+
+        p {
+            margin-top: 30px;
         }
     }
 }
@@ -197,11 +213,19 @@
     &__text {
         @include text;
 
-        p:nth-child(-n+3) {
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
             margin-bottom: 30px;
         }
     }
+
+    p {
+        margin-top: 30px;
+    }
 }
+
 
 // Блок PROBLEM
 .problem {
@@ -218,7 +242,9 @@
     &__text {
         @include text;
 
-        p:first-child {
+        ul {
+            list-style-type: none;
+            padding: 0;
             margin-bottom: 30px;
         }
     }
@@ -520,6 +546,12 @@
             font-weight: 700;
             width: 100%;
         }
+    }
+}
+
+@media (max-width: 1367px) {
+    .case__header-title {
+        margin-top: 40vh;
     }
 }
 
