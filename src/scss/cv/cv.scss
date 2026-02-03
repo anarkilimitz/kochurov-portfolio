@@ -1,8 +1,9 @@
 @use "../base/variables.scss" as *;
 
 .cv {
-    margin: 0 0 0 80px;
-    padding: 0;
+    &__content {
+        margin-left: 80px;
+    }
 
     &__title {
         margin-left: 798px;
@@ -46,6 +47,10 @@
         padding: 0;
         list-style: none;
 
+        &-wrapper {
+            margin-left: 80px;
+        }
+
         &-link {
             display: inline-block;
             color: $text-main;
@@ -82,6 +87,11 @@
             }
         }
     }
+
+    .carousel-container {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 1400px) {
@@ -96,9 +106,30 @@
     }
 }
 
+@media (max-width: 875px) {
+    .cv {
+
+        &__content {
+            margin-left: 20px;
+        }
+
+        &__social-wrapper {
+            margin-left: 20px;
+        }
+    }
+}
+
 @media (max-width: 560px) {
     .cv {
+        .container {
+            margin-left: 0;
+        }
+
         margin: 0 20px;
+
+        &__content {
+            margin-left: 0;
+        }
 
         &__title {
             margin: 0;
@@ -114,12 +145,19 @@
             gap: 40px;
             max-width: 100%;
             max-height: none;
+            margin-left: 0;
         }
 
         &__social {
             &-link {
                 font-size: 15vw;
             }
+        }
+
+        .carousel-container {
+            margin-left: -20px;
+            margin-right: -20px;
+            width: calc(100% + 40px);
         }
     }
 }
