@@ -23,37 +23,37 @@
 }
 
 .hotspot-1 {
-    width: 400px;
-    height: 180px;
-    top: 190px;
-    left: 145px;
+    width: 32%;
+    height: 22%;
+    top: 32%;
+    left: 12.2%;
 }
 
 .hotspot-2 {
-    width: 400px;
-    height: 180px;
-    top: 190px;
-    left: 545px;
+    width: 32%;
+    height: 22%;
+    top: 31.6%;
+    left: 46%;
 }
 
 .hotspot-3 {
-    width: 400px;
-    height: 200px;
-    bottom: 95px;
-    left: 130px;
+    width: 32%;
+    height: 22%;
+    bottom: 18%;
+    left: 10%;
 }
 
 .hotspot-4 {
-    width: 400px;
-    height: 200px;
-    bottom: 95px;
-    left: 535px;
+    width: 32%;
+    height: 22%;
+    bottom: 18%;
+    left: 45%;
 }
 
 .interactive-link {
     position: absolute;
-    top: 120px;
-    right: 10px;
+    top: 60%;
+    left: 30%;
     width: 160px;
     height: 44px;
     background-image: url('/src/img/case/interactiveLink.png');
@@ -68,4 +68,12 @@
 .hotspot:hover .interactive-link {
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width: 1024px) {
+    .interactive-link {
+        width: 40%;
+        height: auto;
+        aspect-ratio: 160 / 44;
+    }
 }
