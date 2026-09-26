@@ -33,7 +33,7 @@ jobs:
 
       - name: Add Vimexx host to known_hosts
         run: |
-          ssh-keyscan -p "${{ secrets.VIMEXX_PORT }}" "${{ secrets.VIMEXX_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -4 -T 10 -p "${{ secrets.VIMEXX_PORT }}" "${{ secrets.VIMEXX_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Upload dist to Vimexx
         run: |
