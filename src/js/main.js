@@ -9,6 +9,7 @@ import { initPageUp } from './pageup.js';
 import { initObserverFixed } from './observerFixed.js';
 import { initTitleEffects } from './titleEffect.js';
 import { initHamburger } from './hamburger.js';
+import { initCV } from './cv.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 	await initOverlayLoader();
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	initPageUp();
 	initObserverFixed();
 	initHamburger();
+	initCV();
 
 	// GSAP только после инициализации lenis
 	gsap.registerPlugin(ScrollTrigger);

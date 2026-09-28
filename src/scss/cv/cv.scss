@@ -32,6 +32,92 @@
         font-style: normal;
     }
 
+    // ----------- для ссылки CV и PDF ------------------------------
+
+    &__title-link {
+        display: inline-flex;
+        align-items: flex-end;
+        gap: 10px;
+
+        color: inherit;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: inherit;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $text-hover;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+    }
+
+    &__pdf {
+        position: relative;
+
+        display: inline-flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        width: 28px;
+        height: 36px;
+
+        flex-shrink: 0;
+
+        padding-bottom: 6px;
+
+        background-color: $text-hover;
+        color: #fff;
+
+        font-size: 9px;
+        font-weight: 700;
+        line-height: 1;
+
+        clip-path: polygon(0 0,
+                72% 0,
+                100% 22%,
+                100% 100%,
+                0 100%);
+
+        opacity: 0;
+        visibility: hidden;
+
+        transform: translate(-10px, -8px);
+
+        transition:
+            opacity 0.2s ease,
+            visibility 0.2s ease,
+            transform 0.2s ease;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            width: 9px;
+            height: 9px;
+
+            background-color: #fff;
+
+            clip-path: polygon(0 0,
+                    100% 100%,
+                    0 100%);
+        }
+    }
+
+    &__title-link:hover &__pdf,
+    &__title-link:focus-visible &__pdf,
+    &__title-link.is-active &__pdf {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -8px);
+    }
+
+    // ----------------------------------------------------------------
     &__social-wrapper {
         margin: 0;
         padding: 0;
