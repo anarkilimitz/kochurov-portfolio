@@ -45,11 +45,34 @@ document.addEventListener('DOMContentLoaded', async () => {
 			'.about__text p, .starting__text p, .starting, .role__text p, .team__text p, .team__text li, .scope__text p, .scope__text li, .ownership__text p, .ownership__text li, .problem__text p, .problem__text li, .challenges__text p, .research__text p, .insights__text p, .results__text p, .evaluated__text p'
 		)
 		.forEach((p) => {
-			// Разбиваем текст на слова с сохранением знаков препинания и пробелов
-			p.innerHTML = p.textContent.replace(
-				/(\S+[\.,!?;:]*)/g,
-				'<span class="word">$1</span>'
-			);
+			const textNodes = [];
+
+			const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT);
+
+			let node;
+
+			while ((node = walker.nextNode())) {
+				if (node.textContent.trim()) {
+					textNodes.push(node);
+				}
+			}
+
+			textNodes.forEach((textNode) => {
+				const fragment = document.createDocumentFragment();
+
+				textNode.textContent.split(/(\s+)/).forEach((text) => {
+					if (text.trim()) {
+						const span = document.createElement('span');
+						span.className = 'word';
+						span.textContent = text;
+						fragment.appendChild(span);
+					} else {
+						fragment.appendChild(document.createTextNode(text));
+					}
+				});
+
+				textNode.parentNode.replaceChild(fragment, textNode);
+			});
 
 			gsap.from(p.querySelectorAll('.word'), {
 				opacity: 0,

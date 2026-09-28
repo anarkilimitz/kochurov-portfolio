@@ -82,7 +82,7 @@
         z-index: 999;
 
         &-subtitle {
-            position: fixed;
+            // position: fixed; // включить, если снова нужен эффект движения вниз!!! весь JS код работает я его не коммитил !!!
             z-index: 1000;
             top: 540px;
             left: 874px;
@@ -322,6 +322,7 @@
     .header {
         min-height: 88vh;
     }
+
     .header__title {
         top: 450px;
     }
