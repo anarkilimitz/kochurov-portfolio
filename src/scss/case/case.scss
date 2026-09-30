@@ -119,6 +119,7 @@
         @include text;
 
         p:first-child {
+            margin-top: 20px;
             margin-bottom: 30px;
         }
     }
@@ -137,6 +138,10 @@
 
     &__text {
         @include text;
+
+        p {
+            margin-top: 20px;
+        }
     }
 }
 
@@ -376,6 +381,51 @@
     }
 }
 
+// для картинок анимации с несколькими изображениями
+.phone-scene {
+    position: relative;
+    overflow: visible;
+
+    .img-bg {
+        position: relative;
+        z-index: 0;
+    }
+
+    &__card {
+        position: absolute;
+        z-index: 1;
+        width: 240px;
+        border-radius: 20px;
+        overflow: hidden;
+        pointer-events: none;
+        will-change: transform, opacity;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        &--left {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &--center {
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        &--right {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
 // галерея картинок
 .img-wrapper {
     margin-left: 280px;
@@ -610,6 +660,42 @@
         padding: 0 20px;
         margin: 0;
     }
+
+    // анимация картинки интерактивной
+        .phone-scene {
+            position: relative;
+            margin: 0 20px;
+            padding: 0;
+            height: 720px;
+            overflow: visible;
+    
+            >.img-bg {
+                width: 100%;
+                height: 540px;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+    
+            &__card {
+                left: 50%;
+                right: auto;
+                width: min(220px, 65vw);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+    
+            &__card--left {
+                top: 38%;
+            }
+    
+            &__card--center {
+                top: 54%;
+            }
+    
+            &__card--right {
+                top: 70%;
+            }
+        }
 
 }
 

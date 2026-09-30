@@ -10,6 +10,7 @@ import { initObserverFixed } from './observerFixed.js';
 import { initTitleEffects } from './titleEffect.js';
 import { initHamburger } from './hamburger.js';
 import { initCV } from './cv.js';
+import { initPhoneScene } from './phoneScene.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 	await initOverlayLoader();
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	gsap.ticker.lagSmoothing(0); // опционально
 
 	// Инициализация кастомных заголовочных эффектов
+	initPhoneScene();
 	initTitleEffects();
 
 	// Анимация слов (без SplitText, так как CDN для него требует платной подписки GSAP Club и не работает публично)
