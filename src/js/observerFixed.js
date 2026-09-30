@@ -1,4 +1,5 @@
 export function initObserverFixed() {
+	return; // временно отключил эффект! если надо включить то просто убрать return + раскомментировать position fixed у сабтайтла
 	const headerSubtitle = document.querySelector('.header__title-subtitle');
 	const casesSection = document.getElementById('cases');
 
@@ -16,8 +17,8 @@ export function initObserverFixed() {
 		},
 		{
 			root: null, // одно и то же root: document.querySelector('body')
-			threshold: 0,
-			rootMargin: '-400px 0px 0px 0px',
+			threshold: 1,
+			rootMargin: '-100px 0px 0px 0px',
 		}
 	);
 
