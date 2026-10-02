@@ -18,75 +18,85 @@ export function initPhoneScene() {
 }
 
 function initPhoneSceneDesktop(scene, left, center, right) {
-	gsap.set(left, {
-		x: -170,
-		y: '-120%',
-		rotation: -18,
-		scale: 0.7,
-		opacity: 0,
-	});
-
-	gsap.set(center, {
-		x: '50%',
-		y: -100,
-		rotation: 8,
-		scale: 0.65,
-		opacity: 0,
-	});
-
-	gsap.set(right, {
-		x: 170,
-		y: '-10%',
-		rotation: 18,
-		scale: 0.7,
-		opacity: 0,
-	});
-
-	const timeline = gsap.timeline({
-		scrollTrigger: {
-			trigger: scene,
-			start: 'top 75%',
-			end: 'bottom 35%',
-			scrub: 1,
+	const initialState = {
+		left: {
+			x: -170,
+			y: '-120%',
+			rotation: -18,
+			scale: 0.7,
+			opacity: 0,
 		},
+		center: {
+			x: '50%',
+			y: -100,
+			rotation: 8,
+			scale: 0.65,
+			opacity: 0,
+		},
+		right: {
+			x: 170,
+			y: '-10%',
+			rotation: 18,
+			scale: 0.7,
+			opacity: 0,
+		},
+	};
+
+	gsap.set(left, initialState.left);
+	gsap.set(center, initialState.center);
+	gsap.set(right, initialState.right);
+
+	scene.addEventListener('mouseenter', () => {
+		gsap.to(left, {
+			x: 80,
+			y: 50,
+			rotation: 12,
+			scale: 1,
+			opacity: 1,
+			duration: 1,
+			ease: 'power3.out',
+		});
+
+		gsap.to(center, {
+			y: 70,
+			rotation: -5,
+			scale: 1.5,
+			opacity: 1,
+			duration: 1,
+			ease: 'power3.out',
+			delay: 0.1,
+		});
+
+		gsap.to(right, {
+			x: -40,
+			y: 150,
+			rotation: 0,
+			scale: 1,
+			opacity: 1,
+			duration: 1,
+			ease: 'power3.out',
+		});
 	});
 
-	timeline
-		.to(
-			left,
-			{
-				x: 80,
-				y: 50,
-				rotation: 12,
-				scale: 1,
-				opacity: 1,
-				ease: 'power3.out',
-			},
-			0
-		)
-		.to(
-			center,
-			{
-				y: 70,
-				rotation: -5,
-				scale: 1.5,
-				opacity: 1,
-				ease: 'power3.out',
-			},
-			0.1
-		)
-		.to(
-			right,
-			{
-				x: -40,
-				y: 150,
-				rotation: 0,
-				scale: 1,
-				opacity: 1,
-				ease: 'power3.out',
-			},
-			0
-		);
+	scene.addEventListener('mouseleave', () => {
+		gsap.to(left, {
+			...initialState.left,
+			duration: 0.8,
+			ease: 'power3.inOut',
+		});
+
+		gsap.to(center, {
+			...initialState.center,
+			duration: 0.8,
+			ease: 'power3.inOut',
+		});
+
+		gsap.to(right, {
+			...initialState.right,
+			duration: 0.8,
+			ease: 'power3.inOut',
+		});
+	});
 }
 
 function initPhoneSceneMobile(scene, left, center, right) {
