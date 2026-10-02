@@ -384,18 +384,21 @@
 // для картинок анимации с несколькими изображениями
 .phone-scene {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    background-color: #fff;
 
     .img-bg {
         position: relative;
-        z-index: 0;
+        z-index: 2;
     }
 
     &__card {
         position: absolute;
-        z-index: 1;
+        z-index: 3;
+
         width: 240px;
         border-radius: 20px;
+
         overflow: hidden;
         pointer-events: none;
         will-change: transform, opacity;
@@ -450,92 +453,9 @@
     }
 }
 
-@media (max-width: 431px) {
-    .case {
-        &__header {
-            .menu-visible {
-                visibility: visible;
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            min-height: auto;
-            display: flex;
-            flex-direction: column;
-
-            &-menu {
-                width: 100%;
-                left: calc(200px + (1084 - 200) * (100vw - 320px) / (1525 - 620));
-                top: 20px;
-                height: auto;
-                flex-direction: column;
-                gap: 15px;
-                padding: 0 20px;
-                justify-content: center;
-                align-items: flex-start;
-                visibility: hidden;
-                opacity: 0;
-                transform: translateX(80px);
-                transition: opacity 0.7s ease, transform 0.7s ease, visibility 0.7s ease;
-            }
-
-            .nav-link {
-                font-size: 20px;
-                font-weight: 700;
-                padding: 0;
-                width: 100%;
-            }
-        }
-    }
-
-    // Блоки текст с тайтлом
-    .starting,
-    .role,
-    .team,
-    .scope,
-    .ownership,
-    .problem,
-    .challenges,
-    .research,
-    .insights,
-    .results,
-    .evaluated {
-
-        &__content {
-            @include grid-content-mobile;
-        }
-    }
-
-    // для всех картинок-BG на странице
-    .img-container {
-        margin: 0px 20px;
-        width: auto;
-        height: 540px;
-        border-radius: 20px;
-        overflow: hidden;
-
-        img {
-            @include img-bg-mobile;
-        }
-    }
-
-    // галерея картинок
-    .img-wrapper {
-        margin: 20px;
-        width: auto;
-        height: 160px;
-        gap: 6px;
-
-        .img-card {
-            width: 288px;
-            height: 160px;
-            border-radius: 24px;
-            overflow: hidden;
-        }
-
-        img {
-            @include img-bg-mobile;
-        }
+@media (min-width: 1921px) {
+    .case__header-menu {
+        left: calc(867px + (100vw - 1920px) / 2);
     }
 }
 
@@ -716,6 +636,97 @@
     }
 }
 
+@media (max-width: 431px) {
+    .case {
+        &__header {
+            .menu-visible {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+
+            &-menu {
+                width: 100%;
+                left: calc(200px + (1084 - 200) * (100vw - 320px) / (1525 - 620));
+                top: 20px;
+                height: auto;
+                flex-direction: column;
+                gap: 15px;
+                padding: 0 20px;
+                justify-content: center;
+                align-items: flex-start;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateX(80px);
+                transition: opacity 0.7s ease, transform 0.7s ease, visibility 0.7s ease;
+            }
+
+            .nav-link {
+                font-size: 20px;
+                font-weight: 700;
+                padding: 0;
+                width: 100%;
+            }
+        }
+    }
+
+    // Блоки текст с тайтлом
+    .starting,
+    .role,
+    .team,
+    .scope,
+    .ownership,
+    .problem,
+    .challenges,
+    .research,
+    .insights,
+    .results,
+    .evaluated {
+
+        &__content {
+            @include grid-content-mobile;
+        }
+    }
+
+    // для всех картинок-BG на странице
+    .img-container {
+        margin: 0px 20px;
+        width: auto;
+        height: 540px;
+        border-radius: 20px;
+        overflow: hidden;
+        z-index: -2;
+
+        img {
+            @include img-bg-mobile;
+            z-index: 0;
+        }
+    }
+
+    // галерея картинок
+    .img-wrapper {
+        margin: 20px;
+        width: auto;
+        height: 160px;
+        gap: 6px;
+
+        .img-card {
+            width: 288px;
+            height: 160px;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        img {
+            @include img-bg-mobile;
+        }
+    }
+}
+
 @media (max-width: 401px) {
     .case__header-menu {
         left: calc(200px + (270 - 200) * (100vw - 320px) / (401 - 320));
@@ -723,11 +734,5 @@
 
     .hamburger {
         display: flex;
-    }
-}
-
-@media (min-width: 1921px) {
-    .case__header-menu {
-        left: calc(867px + (100vw - 1920px) / 2);
     }
 }
