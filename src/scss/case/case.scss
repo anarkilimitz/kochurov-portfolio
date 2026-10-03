@@ -415,16 +415,22 @@
             transform: translateY(-50%);
         }
 
-        &--center {
+        &-top {
             left: 50%;
             top: 0;
             transform: translateX(-50%);
         }
 
-        &--right {
+        &-right {
             right: 0;
             top: 50%;
             transform: translateY(-50%);
+        }
+
+        &-bottom {
+            right: 50%;
+            top: 30%;
+            transform: translateY(50%);
         }
     }
 }
@@ -582,40 +588,44 @@
     }
 
     // анимация картинки интерактивной
-        .phone-scene {
-            position: relative;
-            margin: 0 20px;
-            padding: 0;
-            height: 720px;
-            overflow: visible;
-    
-            >.img-bg {
-                width: 100%;
-                height: 540px;
-                object-fit: cover;
-                border-radius: 20px;
-            }
-    
-            &__card {
-                left: 50%;
-                right: auto;
-                width: min(220px, 65vw);
-                border-radius: 20px;
-                overflow: hidden;
-            }
-    
-            &__card--left {
-                top: 38%;
-            }
-    
-            &__card--center {
-                top: 54%;
-            }
-    
-            &__card--right {
-                top: 70%;
-            }
+    .phone-scene {
+        position: relative;
+        margin: 0 20px;
+        padding: 0;
+        height: 720px;
+        overflow: visible;
+
+        >.img-bg {
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+            border-radius: 20px;
         }
+
+        &__card {
+            left: 50%;
+            right: auto;
+            width: min(220px, 65vw);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        &__card--left {
+            top: 38%;
+        }
+
+        &__card-top {
+            top: 54%;
+        }
+
+        &__card-right {
+            top: 70%;
+        }
+
+        &__card-bottom {
+            top: 80%;
+        }
+    }
 
 }
 

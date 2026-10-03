@@ -4,20 +4,21 @@ export function initPhoneScene() {
 	if (!scene) return;
 
 	const left = scene.querySelector('.phone-scene__card--left');
-	const center = scene.querySelector('.phone-scene__card--center');
-	const right = scene.querySelector('.phone-scene__card--right');
+	const center = scene.querySelector('.phone-scene__card-top');
+	const right = scene.querySelector('.phone-scene__card-right');
+	const bottom = scene.querySelector('.phone-scene__card-bottom');
 
 	const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 	if (isMobile) {
-		initPhoneSceneMobile(scene, left, center, right);
+		initPhoneSceneMobile(scene, left, center, right, bottom);
 		return;
 	}
 
-	initPhoneSceneDesktop(scene, left, center, right);
+	initPhoneSceneDesktop(scene, left, center, right, bottom);
 }
 
-function initPhoneSceneDesktop(scene, left, center, right) {
+function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 	const initialState = {
 		left: {
 			x: -170,
@@ -40,11 +41,19 @@ function initPhoneSceneDesktop(scene, left, center, right) {
 			scale: 0.7,
 			opacity: 0,
 		},
+		bottom: {
+			x: 40,
+			y: 500,
+			rotation: 11,
+			scale: 0.7,
+			opacity: 0,
+		},
 	};
 
 	gsap.set(left, initialState.left);
 	gsap.set(center, initialState.center);
 	gsap.set(right, initialState.right);
+	gsap.set(bottom, initialState.bottom);
 
 	scene.addEventListener('mouseenter', () => {
 		gsap.to(left, {
@@ -76,6 +85,16 @@ function initPhoneSceneDesktop(scene, left, center, right) {
 			duration: 1,
 			ease: 'power3.out',
 		});
+
+		gsap.to(bottom, {
+			x: 40,
+			y: 250,
+			rotation: 0,
+			scale: 1,
+			opacity: 1,
+			duration: 1,
+			ease: 'power3.out',
+		});
 	});
 
 	scene.addEventListener('mouseleave', () => {
@@ -96,10 +115,16 @@ function initPhoneSceneDesktop(scene, left, center, right) {
 			duration: 0.8,
 			ease: 'power3.inOut',
 		});
+
+		gsap.to(bottom, {
+			...initialState.bottom,
+			duration: 0.8,
+			ease: 'power3.inOut',
+		});
 	});
 }
 
-function initPhoneSceneMobile(scene, left, center, right) {
+function initPhoneSceneMobile(scene, left, center, right, bottom) {
 	gsap.set(left, {
 		x: '-30%',
 		y: 100,
@@ -119,6 +144,14 @@ function initPhoneSceneMobile(scene, left, center, right) {
 	gsap.set(right, {
 		x: '-50%',
 		y: 100,
+		rotation: -6,
+		scale: 0.7,
+		opacity: 0,
+	});
+
+	gsap.set(bottom, {
+		x: '-50%',
+		y: 500,
 		rotation: -6,
 		scale: 0.7,
 		opacity: 0,
@@ -162,6 +195,18 @@ function initPhoneSceneMobile(scene, left, center, right) {
 			right,
 			{
 				y: 70,
+				rotation: -2,
+				scale: 1,
+				opacity: 1,
+				ease: 'power3.out',
+			},
+			0.3
+		)
+		.to(
+			bottom,
+			{
+				x: '-50%',
+				y: 250,
 				rotation: -2,
 				scale: 1,
 				opacity: 1,
