@@ -103,6 +103,69 @@
     }
 }
 
+// стрелка назад
+.back-arrow {
+    position: absolute;
+    display: block;
+
+    top: 470px;
+    left: 80px;
+
+    width: 175px;
+    height: 132px;
+
+    color: $arrow-color;
+    z-index: 10;
+
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $arrow-hover;
+    }
+
+    &__line {
+        position: absolute;
+        top: 54%;
+        left: 2%;
+
+        width: 100%;
+        height: 16px;
+
+        background-color: currentColor;
+    }
+
+    &__head {
+        position: absolute;
+
+        width: 81px;
+        height: 16px;
+
+        background-color: currentColor;
+
+        transform-origin: left center;
+    }
+
+    &__head-top {
+        top: 58%;
+        left: 0;
+
+        width: 81px;
+        height: 16px;
+
+        transform: rotate(-45deg);
+    }
+
+    &__head-bottom {
+        top: 50%;
+        left: 0;
+
+        width: 81px;
+        height: 16px;
+
+        transform: rotate(45deg);
+    }
+}
+
 // Блок STARTING
 .starting {
 
@@ -533,6 +596,14 @@
     .case__header-title {
         margin-top: 40vh;
     }
+
+    // стрелка назад
+    .back-arrow {
+        position: absolute;
+        display: block;
+
+        top: 340px;
+    }
 }
 
 @media (max-width: 1360px) {
@@ -554,6 +625,13 @@
             margin-right: 20px;
         }
     }
+}
+
+@media (max-width: 1024px) {
+    // стрелка назад
+        .back-arrow {
+            display: none;
+        }
 }
 
 @media (max-width: 768px) {
