@@ -109,13 +109,63 @@
     }
 }
 
-.carousel-item:hover {
+// иконка и надпись PRIVATE в карусели
+.carousel-private {
+    position: absolute;
+    padding: 0 24px;
+    left: 0;
+    bottom: 75px;
+
+    width: 100%;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    background: $text-hover;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+
+    z-index: 999;
+
+    img {
+        width: 14px;
+        height: 16px;
+        flex-shrink: 0;
+    }
+
+    span {
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0;
+    }
+}
+
+.carousel-item:hover,
+.carousel-item.is-active {
+
+    &::after,
+    &::before {
+        opacity: 1;
+    }
+
     .carousel-tags {
         opacity: 1;
         transform: translateY(0);
     }
-}
 
+    .carousel-private {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .carousel-image {
+        transform: scale(1.02);
+    }
+}
 
 @keyframes scroll {
     0% {
@@ -141,6 +191,16 @@
     .carousel-tags {
         top: 220px;
     }
+
+    .carousel-private {
+
+        img {
+            width: 14px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+    }
 }
 
 @media (max-width: 431px) {
@@ -160,5 +220,14 @@
 
     .carousel-tags {
         top: 275px;
+    }
+
+    .carousel-private {
+
+        img {
+            width: 14px;
+            height: 16px;
+            flex-shrink: 0;
+        }
     }
 }

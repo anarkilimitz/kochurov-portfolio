@@ -11,6 +11,7 @@ import { initTitleEffects } from './titleEffect.js';
 import { initHamburger } from './hamburger.js';
 import { initCV } from './cv.js';
 import { initPhoneScene } from './phoneScene.js';
+import { initCarousel } from './carousel.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 	await initOverlayLoader();
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	initObserverFixed();
 	initHamburger();
 	initCV();
+	initCarousel();
 
 	// GSAP только после инициализации lenis
 	gsap.registerPlugin(ScrollTrigger);
