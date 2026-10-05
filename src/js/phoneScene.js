@@ -3,7 +3,7 @@ export function initPhoneScene() {
 
 	if (!scene) return;
 
-	const left = scene.querySelector('.phone-scene__card--left');
+	const left = scene.querySelector('.phone-scene__card-left');
 	const center = scene.querySelector('.phone-scene__card-top');
 	const right = scene.querySelector('.phone-scene__card-right');
 	const bottom = scene.querySelector('.phone-scene__card-bottom');
@@ -21,32 +21,28 @@ export function initPhoneScene() {
 function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 	const initialState = {
 		left: {
-			x: -170,
-			y: '-120%',
-			rotation: -18,
-			scale: 0.7,
-			opacity: 0,
+			x: '-42%',
+			y: '0%',
+			rotation: 13,
+			scale: 0.2,
 		},
 		center: {
-			x: '50%',
-			y: -100,
-			rotation: 8,
-			scale: 0.65,
-			opacity: 0,
+			x: '5%',
+			y: '-56%',
+			rotation: -11,
+			scale: 0.17,
 		},
 		right: {
-			x: 170,
-			y: '-10%',
-			rotation: 18,
-			scale: 0.7,
-			opacity: 0,
+			x: '62%',
+			y: '-55%',
+			rotation: 9,
+			scale: 0.3,
 		},
 		bottom: {
-			x: 40,
-			y: 500,
-			rotation: 11,
-			scale: 0.7,
-			opacity: 0,
+			x: '60%',
+			y: '20%',
+			rotation: -2,
+			scale: 0.4,
 		},
 	};
 
@@ -57,42 +53,38 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 
 	scene.addEventListener('mouseenter', () => {
 		gsap.to(left, {
-			x: 80,
-			y: 50,
-			rotation: 12,
-			scale: 1,
-			opacity: 1,
-			duration: 1,
+			x: '-37%',
+			y: '0%',
+			rotation: 13,
+			scale: 0.22,
+			duration: 0.4,
 			ease: 'power3.out',
 		});
 
 		gsap.to(center, {
-			y: 70,
-			rotation: -5,
-			scale: 1.5,
-			opacity: 1,
-			duration: 1,
+			x: '5%',
+			y: '-42%',
+			rotation: -11,
+			scale: 0.17,
+			duration: 0.4,
 			ease: 'power3.out',
-			delay: 0.1,
 		});
 
 		gsap.to(right, {
-			x: -40,
-			y: 150,
-			rotation: 0,
-			scale: 1,
-			opacity: 1,
-			duration: 1,
+			x: '35%',
+			y: '-62%',
+			rotation: 9,
+			scale: 0.35,
+			duration: 0.4,
 			ease: 'power3.out',
 		});
 
 		gsap.to(bottom, {
-			x: 40,
-			y: 250,
-			rotation: 0,
-			scale: 1,
-			opacity: 1,
-			duration: 1,
+			x: '50%',
+			y: '-5%',
+			rotation: -2,
+			scale: 0.5,
+			duration: 0.4,
 			ease: 'power3.out',
 		});
 	});
@@ -100,25 +92,25 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 	scene.addEventListener('mouseleave', () => {
 		gsap.to(left, {
 			...initialState.left,
-			duration: 0.8,
+			duration: 0.4,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(center, {
 			...initialState.center,
-			duration: 0.8,
+			duration: 0.4,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(right, {
 			...initialState.right,
-			duration: 0.8,
+			duration: 0.4,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(bottom, {
 			...initialState.bottom,
-			duration: 0.8,
+			duration: 0.4,
 			ease: 'power3.inOut',
 		});
 	});
