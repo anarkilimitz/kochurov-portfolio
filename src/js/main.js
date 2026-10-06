@@ -2,6 +2,7 @@ import { initOverlayLoader } from './overlayLoader.js';
 
 import { initSmoothScroll, lenis } from './scroll.js';
 
+import { initLightbox } from './lightbox.js';
 import { initCustomCursor } from './cursor.js';
 import { initMenu } from './menu';
 import { initHeroImage } from './heroImage.js';
@@ -22,7 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 		el.offsetHeight; // принудительный reflow
 		el.style.animation = '';
 	});
-
+	// Инициализация лайтбокса для галереи SCOPE
+	initLightbox();
+	
 	initSmoothScroll();
 	initCustomCursor();
 	initMenu();
