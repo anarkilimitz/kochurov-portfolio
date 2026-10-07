@@ -41,7 +41,7 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 		bottom: {
 			x: '60%',
 			y: '20%',
-			rotation: -2,
+			rotation: -3,
 			scale: 0.4,
 		},
 	};
@@ -82,8 +82,8 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 		gsap.to(bottom, {
 			x: '50%',
 			y: '-5%',
-			rotation: -2,
-			scale: 0.5,
+			rotation: -3,
+			scale: 0.54,
 			duration: 0.4,
 			ease: 'power3.out',
 		});
