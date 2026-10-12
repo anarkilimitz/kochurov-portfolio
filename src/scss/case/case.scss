@@ -114,13 +114,13 @@
     width: 175px;
     height: 132px;
 
-    color: $arrow-color;
+    color: $arrow-hover;
     z-index: 10;
 
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-out;
 
     &:hover {
-        color: $arrow-hover;
+        color: $arrow-color;
     }
 
     &__line {
@@ -168,6 +168,28 @@
 
 // Блок STARTING
 .starting {
+
+    &__content {
+        margin: 138px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__text {
+        @include text;
+
+        p:first-child {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+// Блок CONTEXT
+.context {
 
     &__content {
         margin: 138px 0 55px 0;
@@ -434,13 +456,85 @@
 
 // для всех картинок-BG на странице
 .img-container {
-    margin: 75px 0 0 280px;
+    margin: 75px 20px 0 280px;
     max-width: 1190px;
     border-radius: 20px;
     overflow: hidden;
 
     img {
         @include img-bg;
+    }
+}
+
+// hover рамка у картинок
+.img-hover {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    border: 8px solid transparent;
+    border-radius: 50px;
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    transition: border-color 0.4s ease-out;
+
+    img {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+
+        clip-path: inset(0 round 20px);
+        transition: clip-path 0.2s ease;
+    }
+
+    &:hover {
+        border-color: $text-hover;
+
+        img {
+            clip-path: inset(2px round 40px);
+        }
+    }
+}
+
+// hover рамка у картинок mini
+.img-hover-mini {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    border: 6px solid transparent;
+    border-radius: 14px;
+    overflow: hidden;
+
+    background-color: #ffffff;
+
+    transition: border-color 0.4s ease-out;
+
+    img {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+
+        clip-path: inset(0 round 14px);
+        transition: clip-path 0.2s ease;
+    }
+
+    &:hover {
+        border-color: $text-hover;
+
+        img {
+            clip-path: inset(2px round 14px);
+        }
     }
 }
 
@@ -547,12 +641,12 @@
         display: flex;
     }
 
-    .img-container {
-        img {
-            padding-right: 20px;
-            ;
-        }
-    }
+    // .img-container {
+    //     img {
+    //         padding-right: 20px;
+    //         ;
+    //     }
+    // }
 
     .interactive-image-container {
         margin-right: 0;
@@ -628,10 +722,11 @@
 }
 
 @media (max-width: 1024px) {
+
     // стрелка назад
-        .back-arrow {
-            display: none;
-        }
+    .back-arrow {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {

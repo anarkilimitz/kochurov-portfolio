@@ -10,7 +10,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <title>Kochurov</title>
+
+    <!-- Предзагрузка шрифтов (только normal) -->
+    <link rel="preload" href="/src/fonts/cabin-v35-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/fonts/cabin-v35-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/fonts/cabin-v35-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/fonts/cabin-v35-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+
     <link rel="stylesheet" href="/src/libs/fonts.css" />
     <link rel="stylesheet" href="/src/scss/style.scss" />
 
@@ -109,10 +117,12 @@
                 </div>
                 <!-- картинка -->
                 <div class="img-container">
-                    <img src="/src/img/case/backbase.png" alt="phone-big" class="img-bg" />
+                    <div class="img-hover">
+                        <img src="/src/img/case/backbase.png" alt="phone-big" class="img-bg" />
+                    </div>
                 </div>
                 <!-- картинка с анимацией -->
-                <div class="img-container phone-scene">
+                <div class="img-container phone-scene img-hover">
                     <img src="/src/img/case/backbase.png" alt="phone-big" class="img-bg" />
 
                     <div class="phone-scene__card phone-scene__card-left">
@@ -163,7 +173,7 @@
                     </div>
                 </div>
                 <!-- интерактивная картинка со ссылками -->
-                <div class="interactive-image-container">
+                <div class="interactive-image-container img-hover">
                     <img src="/src/img/case/team.png" alt="team" class="img-bg" />
                     <!-- контейнер со ссылками -->
                     <div class="hotspot hotspot-1">
@@ -202,14 +212,14 @@
                 </div>
                 <!-- галерея картинок -->
                 <div class="img-wrapper" data-lightbox="scope">
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case1.png" alt="Case-1" class="img-bg">
                     </div>
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case2.png" alt="Case-2" class="img-bg">
                     </div>
 
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case3.png" alt="Case-3" class="img-bg">
                     </div>
                 </div>
@@ -274,14 +284,14 @@
                 </div>
                 <!-- галерея картинок -->
                 <div class="img-wrapper">
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case1.png" alt="Case-1" class="img-bg">
                     </div>
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case2.png" alt="Case-2" class="img-bg">
                     </div>
 
-                    <div class="img-card">
+                    <div class="img-card img-hover-mini">
                         <img src="/src/img/carousel/case3.png" alt="Case-3" class="img-bg">
                     </div>
                 </div>

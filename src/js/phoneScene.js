@@ -34,7 +34,7 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 		},
 		right: {
 			x: '62%',
-			y: '-55%',
+			y: '-5%',
 			rotation: 9,
 			scale: 0.3,
 		},
@@ -57,8 +57,8 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 			y: '0%',
 			rotation: 13,
 			scale: 0.22,
-			duration: 0.4,
-			ease: 'power3.out',
+			duration: 0.3,
+			ease: 'power1.out',
 		});
 
 		gsap.to(center, {
@@ -66,17 +66,17 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 			y: '-42%',
 			rotation: -11,
 			scale: 0.17,
-			duration: 0.4,
-			ease: 'power3.out',
+			duration: 0.3,
+			ease: 'power1.out',
 		});
 
 		gsap.to(right, {
 			x: '35%',
-			y: '-62%',
+			y: '-10%',
 			rotation: 9,
 			scale: 0.35,
-			duration: 0.4,
-			ease: 'power3.out',
+			duration: 0.3,
+			ease: 'power1.out',
 		});
 
 		gsap.to(bottom, {
@@ -84,33 +84,33 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 			y: '-5%',
 			rotation: -3,
 			scale: 0.54,
-			duration: 0.4,
-			ease: 'power3.out',
+			duration: 0.3,
+			ease: 'power1.out',
 		});
 	});
 
 	scene.addEventListener('mouseleave', () => {
 		gsap.to(left, {
 			...initialState.left,
-			duration: 0.4,
+			duration: 0.3,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(center, {
 			...initialState.center,
-			duration: 0.4,
+			duration: 0.3,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(right, {
 			...initialState.right,
-			duration: 0.4,
+			duration: 0.3,
 			ease: 'power3.inOut',
 		});
 
 		gsap.to(bottom, {
 			...initialState.bottom,
-			duration: 0.4,
+			duration: 0.3,
 			ease: 'power3.inOut',
 		});
 	});
@@ -167,7 +167,7 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 				rotation: -4,
 				scale: 1,
 				opacity: 1,
-				ease: 'power3.out',
+				ease: 'power1.out',
 			},
 			0
 		)
@@ -179,7 +179,7 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 				rotation: 3,
 				scale: 1,
 				opacity: 1,
-				ease: 'power3.out',
+				ease: 'power1.out',
 			},
 			0.15
 		)
@@ -190,7 +190,7 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 				rotation: -2,
 				scale: 1,
 				opacity: 1,
-				ease: 'power3.out',
+				ease: 'power1.out',
 			},
 			0.3
 		)
@@ -202,7 +202,7 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 				rotation: -2,
 				scale: 1,
 				opacity: 1,
-				ease: 'power3.out',
+				ease: 'power1.out',
 			},
 			0.3
 		);
