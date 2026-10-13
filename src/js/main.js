@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	});
 	// Инициализация лайтбокса для галереи SCOPE
 	initLightbox();
-	
+
 	initSmoothScroll();
 	initCustomCursor();
 	initMenu();
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	// Анимация слов (без SplitText, так как CDN для него требует платной подписки GSAP Club и не работает публично)
 	document
 		.querySelectorAll(
-			'.about__text p, .starting__text p, .starting, .role__text p, .team__text p, .team__text li, .scope__text p, .scope__text li, .ownership__text p, .ownership__text li, .problem__text p, .problem__text li, .challenges__text p, .research__text p, .insights__text p, .results__text p, .evaluated__text p'
+			'.about__text p, .starting__text p, .context__part-label, .context__part-title, .context__part-text p, .role__text p, .team__text p, .team__text li, .my-work__column-title, .my-work__list, .scope__text p, .scope__text li, .ownership__text p, .ownership__text li, .problem__text p, .problem__text li, .challenges__text p, .research__text p, .insights__text p, .results__text p, .evaluated__text p'
 		)
 		.forEach((p) => {
 			const textNodes = [];

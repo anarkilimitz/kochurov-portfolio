@@ -168,9 +168,8 @@
 
 // Блок STARTING
 .starting {
-
     &__content {
-        margin: 138px 0 55px 0;
+        margin: 138px 0 0 0;
         @include grid-content;
     }
 
@@ -181,18 +180,16 @@
     &__text {
         @include text;
 
-        p:first-child {
+        p {
             margin-top: 20px;
-            margin-bottom: 30px;
         }
     }
 }
 
-// Блок CONTEXT
+// Блок CONTEXT 
 .context {
-
     &__content {
-        margin: 138px 0 55px 0;
+        margin: 73px 0 55px 0;
         @include grid-content;
     }
 
@@ -200,12 +197,59 @@
         @include title;
     }
 
-    &__text {
-        @include text;
+    &__parts {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
 
-        p:first-child {
-            margin-top: 20px;
-            margin-bottom: 30px;
+    &__part {
+        position: relative;
+        padding-left: 0;
+
+        // Стрелка
+        &-arrow {
+            position: absolute;
+            left: -50px;
+            top: -7px;
+            width: 30px;
+            height: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &-label {
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: $text-main;
+            margin-bottom: 6px;
+            transition: color 0.3s ease;
+        }
+
+        &-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: $text-main;
+            margin: 0 0 6px;
+            transition: color 0.3s ease;
+        }
+
+        &-text {
+            @include text;
+        }
+
+        &:hover {
+            .context__part-arrow {
+                opacity: 1;
+            }
+
+            .context__part-label,
+            .context__part-title {
+                color: $text-hover;
+            }
         }
     }
 }
@@ -234,7 +278,7 @@
 .team {
 
     &__content {
-        margin: 138px 0 55px 0;
+        margin: 80px 0 55px 0;
         @include grid-content;
     }
 
@@ -244,6 +288,7 @@
 
     &__text {
         @include text;
+        margin-top: 20px;
 
         ul {
             list-style-type: none;
@@ -253,6 +298,51 @@
 
         p {
             margin-top: 30px;
+        }
+    }
+}
+
+// Блок MY WORK
+.my-work {
+    &__content {
+        margin: 80px 0 55px 0;
+        @include grid-content;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__columns {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 70px;
+    }
+
+    &__column {
+        &-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: $text-main;
+            margin: 0 0 32px;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            font-size: 20px;
+            line-height: 1;
+            color: $text-main;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -629,13 +719,6 @@
         display: flex;
     }
 
-    // .img-container {
-    //     img {
-    //         padding-right: 20px;
-    //         ;
-    //     }
-    // }
-
     .interactive-image-container {
         margin-right: 0;
         padding-right: 20px;
@@ -715,14 +798,24 @@
     .back-arrow {
         display: none;
     }
+
+    // блок MY WORK
+    .my-work {
+        &__columns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
 }
 
 @media (max-width: 768px) {
 
     // Блоки текст с тайтлом
     .starting,
+    .context,
     .role,
     .team,
+    .my-work,
     .scope,
     .ownership,
     .problem,
@@ -774,22 +867,14 @@
             border-radius: 20px;
             overflow: hidden;
         }
+    }
 
-        // &__card-left {
-        //     top: 38%;
-        // }
-
-        // &__card-top {
-        //     top: 54%;
-        // }
-
-        // &__card-right {
-        //     top: 70%;
-        // }
-
-        // &__card-bottom {
-        //     top: 80%;
-        // }
+    // блок MY WORK
+    .my-work {
+        &__columns {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
     }
 
 }
@@ -851,6 +936,7 @@
 
     // Блоки текст с тайтлом
     .starting,
+    .context,
     .role,
     .team,
     .scope,

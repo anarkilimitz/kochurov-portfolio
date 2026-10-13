@@ -47,3 +47,7 @@
 @mixin img-bg-mobile {
     border-radius: 16px;
 }
+
+@mixin part-gap {
+    $part-gap: 30px;
+}
