@@ -1,7 +1,9 @@
-export function initPhoneScene() {
+export async function initPhoneScene() {
 	const scene = document.querySelector('.phone-scene');
 
 	if (!scene) return;
+
+	await waitForImages(scene);
 
 	const left = scene.querySelector('.phone-scene__card-left');
 	const center = scene.querySelector('.phone-scene__card-top');
@@ -18,29 +20,47 @@ export function initPhoneScene() {
 	initPhoneSceneDesktop(scene, left, center, right, bottom);
 }
 
+// чтобы дождаться загрузки картинок именно для эффектов Гсап с координатами!!!
+function waitForImages(container) {
+	const images = [...container.querySelectorAll('img')];
+
+	return Promise.all(
+		images.map((img) => {
+			if (img.complete) {
+				return Promise.resolve();
+			}
+
+			return new Promise((resolve) => {
+				img.addEventListener('load', resolve, { once: true });
+				img.addEventListener('error', resolve, { once: true });
+			});
+		})
+	);
+}
+
 function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 	const initialState = {
 		left: {
 			x: '-42%',
-			y: '0%',
+			y: '-65%',
 			rotation: 13,
 			scale: 0.2,
 		},
 		center: {
 			x: '5%',
-			y: '-56%',
+			y: '-82%',
 			rotation: -11,
 			scale: 0.17,
 		},
 		right: {
 			x: '62%',
-			y: '-5%',
+			y: '-93%',
 			rotation: 9,
 			scale: 0.3,
 		},
 		bottom: {
-			x: '60%',
-			y: '20%',
+			x: '5%',
+			y: '-40%',
 			rotation: -3,
 			scale: 0.4,
 		},
@@ -54,7 +74,7 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 	scene.addEventListener('mouseenter', () => {
 		gsap.to(left, {
 			x: '-37%',
-			y: '0%',
+			y: '-65%',
 			rotation: 13,
 			scale: 0.22,
 			duration: 0.3,
@@ -63,7 +83,7 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 
 		gsap.to(center, {
 			x: '5%',
-			y: '-42%',
+			y: '-68%',
 			rotation: -11,
 			scale: 0.17,
 			duration: 0.3,
@@ -72,7 +92,7 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 
 		gsap.to(right, {
 			x: '35%',
-			y: '-10%',
+			y: '-100%',
 			rotation: 9,
 			scale: 0.35,
 			duration: 0.3,
@@ -80,8 +100,8 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 		});
 
 		gsap.to(bottom, {
-			x: '50%',
-			y: '-5%',
+			x: '0%',
+			y: '-65%',
 			rotation: -3,
 			scale: 0.54,
 			duration: 0.3,

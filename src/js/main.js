@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	gsap.ticker.lagSmoothing(0); // опционально
 
 	// Инициализация кастомных заголовочных эффектов
-	initPhoneScene();
+	await initPhoneScene();
 	initTitleEffects();
 
 	// Анимация слов (без SplitText, так как CDN для него требует платной подписки GSAP Club и не работает публично)

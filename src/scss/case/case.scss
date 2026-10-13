@@ -567,30 +567,18 @@
         }
 
         &-left {
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
             z-index: 10;
         }
 
         &-top {
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%);
             z-index: 10;
         }
 
         &-right {
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
             z-index: 5;
         }
 
         &-bottom {
-            right: 50%;
-            top: 30%;
-            transform: translateY(50%);
             z-index: 6;
         }
     }
@@ -787,21 +775,21 @@
             overflow: hidden;
         }
 
-        &__card-left {
-            top: 38%;
-        }
+        // &__card-left {
+        //     top: 38%;
+        // }
 
-        &__card-top {
-            top: 54%;
-        }
+        // &__card-top {
+        //     top: 54%;
+        // }
 
-        &__card-right {
-            top: 70%;
-        }
+        // &__card-right {
+        //     top: 70%;
+        // }
 
-        &__card-bottom {
-            top: 80%;
-        }
+        // &__card-bottom {
+        //     top: 80%;
+        // }
     }
 
 }
