@@ -51,3 +51,8 @@
 @mixin part-gap {
     $part-gap: 30px;
 }
+
+@mixin text-italic {
+    font-style: italic;
+    color: rgba(122, 128, 128, 1);
+}

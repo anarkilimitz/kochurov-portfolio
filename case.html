@@ -167,23 +167,25 @@
                     </div>
                 </div>
 
-                <!-- Блок Team -->
-                <div class="team__content">
-                    <h3 class="team__title">TEAM</h3>
-                    <div class="team__text">
-                        <ul>
-                            <li>Francies Gordon — content design</li>
-                            <li>Nazario — interaction design</li>
-                            <li>Evgenii Kochurov — experience and visual design</li>
-                            <li>Mark Witkampf —team lead</li>
-                        </ul>
-
-                        <p>This multidisciplinary team allowed us to approach the Design Language holistically—aligning
-                            narrative, interaction,
-                            visual, and system-level decisions.
-                        </p>
+                <!-- Блок TEAM -->
+                <section class="team">
+                    <div class="container">
+                        <div class="team__content">
+                            <h2 class="team__title">TEAM</h2>
+                            <div class="team__text">
+                                <ul>
+                                    <li>Francies Gordon — content writer</li>
+                                    <li>Nazario — motion designer</li>
+                                    <li>Evgenii Kochurov — product designer (me)</li>
+                                    <li>Mark Witkampf — team manager</li>
+                                </ul>
+                                <p>This multidisciplinary team allowed us to approach the Design Language
+                                    holistically—aligning narrative, interaction,
+                                    visual, and system-level decisions.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- интерактивная картинка со ССЫЛКАМИ на Линкедин -->
                 <div class="interactive-image-container img-hover">
@@ -253,6 +255,39 @@
                     </div>
                 </section>
 
+                <!-- Блок PART ONE - THE LANGUAGE -->
+                <section class="product-section">
+                    <div class="container">
+                        <div class="product-section__header-flex">
+                            <span class="product-section__label">PART ONE</span>
+                            <h2 class="product-section__title">THE LANGUAGE</h2>
+                        </div>
+                        <!-- Основной блок-->
+                        <div class="product-section__content">
+                            <div class="product-section__sidebar">
+                                <h3 class="product-section__subtitle">PRODUCT</h3>
+                            </div>
+                            <div class="product-section__main">
+                                <div class="product-section__text">
+                                    <p>Backbase is a white-label digital banking platform. Banks license the front end,
+                                        theme it in their own brand, and ship
+                                        it to their customers as their app. 150+ banks ran on it during my time — AIB,
+                                        Barclays, Citibank, Banorte, Discovery
+                                        Bank, First National Bank. The product line spans retail banking, business
+                                        banking, onboarding and wealth, plus the
+                                        employee-facing workspaces bank staff work in behind them.</p>
+                                    <p>Two consequences follow from that, and everything in this case comes out of them.
+                                        The bank is buying the surface, so
+                                        every sales demo is a design demo. And every bank that signs is a billable
+                                        implementation, because the front end has to
+                                        be rebuilt in that bank's brand before it can go live. The design layer is the
+                                        product.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- картинка с анимацией -->
                 <div class="img-container phone-scene img-hover">
                     <img src="/src/img/case/backbase.png" alt="phone-big" class="img-bg" />
@@ -273,40 +308,62 @@
                         <img src="/src/img/case/animation/create.png" alt="img-create" class="img-bg" />
                     </div>
                 </div>
-                <!-- Блок ROLE -->
-                <div class="role__content">
-                    <h3 class="role__title">ROLE</h3>
-                    <div class="role__text">
-                        <p>I led the visual and experience direction within the Design Language workstream. My
-                            responsibility was to translate
-                            brand principles into scalable product patterns, define visual and motion foundations, and
-                            establish a clear connection
-                            between brand expression and product experience. I collaborated closely with product and
-                            engineering teams to guide
-                            adoption of the new design strategies and ensure that they were applied consistently across
-                            the product ecosystem.</p>
+
+                <!-- Блок situation -->
+                <div class="situation__content">
+                    <h3 class="situation__title">SITUATION</h3>
+                    <div class="situation__text">
+                        <p>Deals that should have closed were slowing down. Design quality kept surfacing in those
+                            conversations — never the
+                            headline objection, but often enough to notice. The company took it seriously enough to
+                            commission research with real
+                            users, asking directly why prospects were not buying.</p>
+                        <p>So the question arrived at design as a diagnostic: what is actually wrong with what we are
+                            selling?</p>
+                        <p>One complication sat underneath it. The design system itself was not trusted internally.
+                            Teams treated it as a library
+                            to pick from rather than a tool to design with. Whatever the research found, fixing it was
+                            never going to be a matter of
+                            shipping better components.</p>
                     </div>
                 </div>
 
-                <!-- Блок SCOPE -->
-                <div class="scope__content">
-                    <h3 class="scope__title">SCOPE</h3>
-                    <div class="scope__text">
-                        <ul>
-                            <li>The initiative spanned nearly three years.</li>
-                            <li>During this period, we:</li>
-                        </ul>
-                        <ul>
-                            <li>Defined the brand’s core principles</li>
-                            <li>Translated them into a formal Design Language</li>
-                            <li>Applied these foundations progressively across the product line</li>
-                            <li>Modernized high-impact workflows (e.g., the Login flow)</li>
-                            <li>Reworked legacy components and patterns</li>
-                            <li>Introduced new system components and improved their flexibility</li>
-                        </ul>
-                        <p>This iterative approach allowed us to deliver meaningful improvements without disrupting the
-                            product delivery roadmap.
-                        </p>
+                <!-- Блок finedings -->
+                <div class="finedings__content">
+                    <h3 class="finedings__title">FINDINGS</h3>
+                    <div class="finedings__text">
+                        <p>1 · No flexibility to express a bank's brand. A bank licenses the front end in order to ship
+                            its own app. In practice
+                            the theming layer could not carry a brand far enough — the colour and the logo changed, the
+                            character did not. Every
+                            implementation came out recognisably the same product underneath. That breaks the promise on
+                            the exact thing the
+                            platform is sold on, and it is the hardest objection to answer in a demo, because the
+                            prospect is looking at another
+                            bank's app while you make the claim.</p>
+                        <p class="finedings__text-italic">Observed across implementations. Not measured — the proof came later, in the fix.</p>
+                        <p>2 · Fragmented styles across the product lines. Retail, business banking, onboarding and
+                            wealth had drifted into
+                            separate visual dialects. Typography did not share a system. The asset library carried
+                            several styles at once. Dark mode
+                            was bolted on wherever someone had needed it. In a demo that reads as one conclusion: there
+                            is no system behind this. A
+                            bank is buying a platform, and the promise of a platform is that whatever gets added next
+                            will fit.</p>
+                        <p class="finedings__text-italic">Observed across the product lines. Not measured — reported back from sales.</p>
+                        <p>3 · Product looked old, and that made it hard to sell. This one was tested rather than
+                            asserted. Sessions on the
+                            UserTesting platform with real users, our flows and competitor flows through an identical
+                            protocol: Cards scored 5.30
+                            overall and 4.86 on brand alignment, Transactions 5.12 and 4.46, against Revolut at 5.60 /
+                            5.52 on a 0–6 scale. Below
+                            the market on both core flows — and the gap on brand alignment is roughly double the gap on
+                            overall quality.</p>
+                        <p class="finedings__text-italic">Real users, external platform, competitor-benchmarked, and re-run with the same instrument
+                            after the login MVP.</p>
+                        <p>All three have one cause. Too uniform across banks, not uniform enough across our own product
+                            lines, and measurably
+                            weakest on brand — because there was no shared foundation underneath any of it.</p>
                     </div>
                 </div>
                 <!-- галерея картинок -->
