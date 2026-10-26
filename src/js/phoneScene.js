@@ -138,16 +138,16 @@ function initPhoneSceneDesktop(scene, left, center, right, bottom) {
 
 function initPhoneSceneMobile(scene, left, center, right, bottom) {
 	gsap.set(left, {
-		x: '-30%',
-		y: 100,
+		x: '40%',
+		y: -50,
 		rotation: -8,
 		scale: 0.7,
 		opacity: 0,
 	});
 
 	gsap.set(center, {
-		x: '50%',
-		y: 100,
+		x: '-50%',
+		y: -100,
 		rotation: 6,
 		scale: 0.7,
 		opacity: 0,
@@ -155,15 +155,15 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 
 	gsap.set(right, {
 		x: '-50%',
-		y: 100,
+		y: -100,
 		rotation: -6,
 		scale: 0.7,
 		opacity: 0,
 	});
 
 	gsap.set(bottom, {
-		x: '-50%',
-		y: 500,
+		x: '50%',
+		y: -200,
 		rotation: -6,
 		scale: 0.7,
 		opacity: 0,
@@ -183,7 +183,7 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 			left,
 			{
 				x: -150,
-				y: -80,
+				y: -400,
 				rotation: -4,
 				scale: 1,
 				opacity: 1,
@@ -194,8 +194,8 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 		.to(
 			center,
 			{
-				x: -50,
-				y: -50,
+				x: -150,
+				y: -800,
 				rotation: 3,
 				scale: 1,
 				opacity: 1,
@@ -206,8 +206,9 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 		.to(
 			right,
 			{
-				y: 70,
-				rotation: -2,
+				x: 50,
+				y: -170,
+				rotation: 4,
 				scale: 1,
 				opacity: 1,
 				ease: 'power1.out',
@@ -217,8 +218,8 @@ function initPhoneSceneMobile(scene, left, center, right, bottom) {
 		.to(
 			bottom,
 			{
-				x: '-50%',
-				y: 250,
+				x: 20,
+				y: -470,
 				rotation: -2,
 				scale: 1,
 				opacity: 1,
